@@ -29,7 +29,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            Vuetify MD
+            DOWHILELOOPS
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
@@ -53,12 +53,12 @@
           class="v-list-item v-list__tile--buy"
           to="/upgrade"
         >
-          <v-list-tile-action>
+          <!-- <v-list-tile-action>
             <v-icon>mdi-package-up</v-icon>
           </v-list-tile-action>
           <v-list-tile-title class="font-weight-light">
             Upgrade To PRO
-          </v-list-tile-title>
+          </v-list-tile-title> -->
         </v-list-tile>
       </v-layout>
     </v-img>
@@ -84,39 +84,70 @@ export default {
     links: [
       {
         to: '/',
+        icon: 'mdi-home',
+        text: 'Home'
+      },
+      {
+        to: '/tech',
+        icon: 'mdi-code-brackets',
+        text: 'Tech'
+      },
+      {
+        to: '/tunes',
+        icon: 'mdi-music',
+        text: 'Tunes'
+      },
+      {
+        to: '/blog',
+        // icon: 'mdi-clipboard-text',
+        icon: 'mdi-lead-pencil',
+        text: 'Blog'
+      },
+      {
+        to: '/about',
+        icon: 'mdi-contacts',
+        text: 'About'
+      },
+      {
+        to: '/dashboard',
         icon: 'mdi-view-dashboard',
         text: 'Dashboard'
-      },
-      {
-        to: '/user-profile',
-        icon: 'mdi-account',
-        text: 'User Profile'
-      },
-      {
-        to: '/table-list',
-        icon: 'mdi-clipboard-outline',
-        text: 'Table List'
-      },
-      {
-        to: '/typography',
-        icon: 'mdi-format-font',
-        text: 'Typography'
-      },
-      {
-        to: '/icons',
-        icon: 'mdi-chart-bubble',
-        text: 'Icons'
-      },
-      {
-        to: '/maps',
-        icon: 'mdi-map-marker',
-        text: 'Maps'
-      },
-      {
-        to: '/notifications',
-        icon: 'mdi-bell',
-        text: 'Notifications'
       }
+      // {
+      //   to: '/',
+      //   icon: 'mdi-view-dashboard',
+      //   text: 'Dashboard'
+      // },
+      // {
+      //   to: '/user-profile',
+      //   icon: 'mdi-account',
+      //   text: 'User Profile'
+      // },
+      // {
+      //   to: '/table-list',
+      //   icon: 'mdi-clipboard-outline',
+      //   text: 'Table List'
+      // },
+      // {
+      //   to: '/typography',
+      //   icon: 'mdi-format-font',
+      //   text: 'Typography'
+      // },
+      // {
+      //   to: '/icons',
+      //   icon: 'mdi-chart-bubble',
+      //   text: 'Icons'
+      // },
+      // {
+      //   to: '/maps',
+      //   icon: 'mdi-map-marker',
+      //   text: 'Maps'
+      // },
+      // {
+      //   to: '/notifications',
+      //   icon: 'mdi-bell',
+      //   text: 'Notifications'
+      // }
     ]
   }),
   computed: {
