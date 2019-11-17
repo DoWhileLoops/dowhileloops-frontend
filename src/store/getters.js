@@ -9,7 +9,7 @@ export default {
       var currentIndex = state.rows.length
       var temporaryValue, randomIndex
 
-      while (0 !== currentIndex) {
+      while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex)
         currentIndex -= 1
 
@@ -17,7 +17,7 @@ export default {
         state.rows[currentIndex] = state.rows[randomIndex]
         state.rows[randomIndex] = temporaryValue
       }
-    }  
+    }
     return state.rows
   }
 }
