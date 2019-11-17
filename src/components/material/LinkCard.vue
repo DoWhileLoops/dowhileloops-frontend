@@ -1,20 +1,21 @@
-<template>
+  <template>
   <material-card
     v-bind="$attrs"
     class="v-card--material-link"
     v-on="$listeners"
+    v-on:click="openCardLink"
   >
     <v-card
       slot="offset"
       :class="`elevation-${elevation}`"
-      :color="color"
+      v-bind:style="{'background-color': iconBackgroundColor}"
       class="pa-4"
       dark
     >
       <v-icon
-        size="40"
+        size="60"
       >
-        {{ icon }}
+        {{ shownIcon }}
       </v-icon>
     </v-card>
     <div class="text-xs-right">
@@ -24,7 +25,7 @@
       />
       <h3
         class="title display-1 font-weight-light">
-        {{ rowData.title }}  <small>{{ smallValue }}</small>
+        {{ rowData.title }} 
       </h3>      
     </div>
 
@@ -89,6 +90,24 @@ export default {
       type: Object,
       default: undefined
     }
+  },
+  computed: {
+    shownIcon: function() {
+        if(this.rowData.source == 'GitHub') return 'mdi-github-circle';
+        else if(this.rowData.source == 'SoundCloud') return 'mdi-soundcloud';
+        else if(this.rowData.source == 'Storyblok') return 'mdi-lead-pencil';
+    },
+    iconBackgroundColor: function() {
+            if(this.rowData.source == 'GitHub') return '#24292e';
+            else if(this.rowData.source == 'SoundCloud') return '#f50';
+            else if(this.rowData.source == 'Storyblok') return '#1276AE';
+        }
+  },
+  methods: {
+      openCardLink: function() {
+        //TODO: come back once blog routing figured out
+        window.open(this.rowData.url, "_blank")
+      }
   }
 }
 </script>

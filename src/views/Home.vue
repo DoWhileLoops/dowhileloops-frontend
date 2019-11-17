@@ -7,13 +7,11 @@
                 lg3 
                 v-for="row in rows" v-bind:key="row.uid" v-bind="row">
                 <material-link-card
-                color="green"
-                icon="mdi-store"
+                v-bind:rowData="row"
                 title="Revenue"
                 value="$34,245"
                 sub-icon="mdi-calendar"
                 sub-text="asdf"
-                v-bind:rowData="row"
                 />
             </v-flex>
         </v-layout>
@@ -25,7 +23,7 @@ export default {
     name: 'Home',
     computed: {
         rows () {
-            return this.$store.getters.getAllRows
+            return this.$store.getters.getAllShuffledRows;
         } 
     }
 }
