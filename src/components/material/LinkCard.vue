@@ -117,6 +117,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  cursor: pointer;
 
   .v-offset {
     display: inline-block;

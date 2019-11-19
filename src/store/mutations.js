@@ -5,8 +5,6 @@ export default {
     state.rows = response.data
   },
   pushSingleBlog (state, response) {
-    console.log(state)
-    console.log(response)
     if ((state.blogs.filter(b => b.slug === response.slug)).length === 0) {
       state.blogs.push(response)
     }

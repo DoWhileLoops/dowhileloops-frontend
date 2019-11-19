@@ -1,5 +1,8 @@
 <template>
-    <h1>{{$route.params.id}}</h1>
+    <div>
+        <h1>{{$route.params.id}}</h1>
+        <h1>{{story}}</h1>
+    </div>
 </template>
 
 <script>
@@ -7,7 +10,11 @@ export default {
     name: 'SingleBlog',
     data: function () {
         return {
-            blogData: null,
+            story: {
+                content:{
+                    body: []
+                }
+            }
         }
     },
     async created () {
@@ -19,7 +26,7 @@ export default {
             await this.$store.dispatch('fetchSingleBlog', payload)
         }
 
-        this.blogData = this.$store.getters.getSingleBlog(payload);
+        this.story = this.$store.getters.getSingleBlog(payload);
     }
 }
 </script>

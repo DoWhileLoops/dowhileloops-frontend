@@ -17,9 +17,8 @@ export default {
     var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt'
     return Axios.get(url)
       .then(function (response) {
-        console.log('api pinged : ' + response)
-        context.commit('pushSingleBlog', response)
-        return response.data.data
+        context.commit('pushSingleBlog', response.data)
+        return response.data
       })
       .catch(function (error) {
         console.log(error)
