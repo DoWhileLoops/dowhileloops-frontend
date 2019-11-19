@@ -2,5 +2,6 @@
 
 export default {
   rows: null,
+  blogs: [],
   count: 0
 }

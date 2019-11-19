@@ -106,7 +106,7 @@ export default {
   methods: {
       openCardLink: function() {
         //TODO: come back once blog routing figured out
-        window.open(this.rowData.url, "_blank")
+        window.open(this.rowData.url, this.rowData.source === 'Storyblok' ? "_self" : "_blank")
       }
   }
 }

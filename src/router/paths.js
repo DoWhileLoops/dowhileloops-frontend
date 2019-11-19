@@ -25,6 +25,11 @@ export default [
     view: 'Tunes'
   },
   {
+    path: '/blog/:id',
+    name: 'SingleBlog',
+    view: 'SingleBlog'
+  },
+  {
     path: '/blog',
     name: 'Blog',
     view: 'Blog'

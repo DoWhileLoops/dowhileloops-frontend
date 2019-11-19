@@ -19,5 +19,8 @@ export default {
       }
     }
     return state.rows
+  },
+  getSingleBlog: (state) => (slug) => {
+    return state.blogs.find(b => b.slug === slug)
   }
 }
