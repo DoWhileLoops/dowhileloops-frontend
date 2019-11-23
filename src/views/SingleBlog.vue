@@ -23,6 +23,7 @@ export default {
         }
     },
     async created () {
+
         var payload = this.$route.params.id        
         var tryStore = this.$store.getters.getSingleBlog(payload);
         
@@ -30,11 +31,12 @@ export default {
             await this.$store.dispatch('fetchSingleBlog', payload)
         }
 
-        this.story = this.$store.getters.getSingleBlog(payload).story;
+        if(typeof this.$store.getters.getSingleBlog(payload) !== 'undefined'){
+            this.story = this.$store.getters.getSingleBlog(payload).story;
+        }else{
+            this.$router.push({name:'NotFound'}) 
+        }
 
-        console.log(this.story)
-
-        //TODO: REDIRECT IF NO STORY!
     }
 }
 </script>
