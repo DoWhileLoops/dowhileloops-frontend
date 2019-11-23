@@ -14,7 +14,28 @@ export default {
       })
   },
   fetchSingleBlog (context, payload) {
-    var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt'
+
+    // TODO: clean this up
+    // storyblok caching on their end
+    // var versionNum;
+    // var url;
+    // var storyblokVersionUrl = 'https://api.storyblok.com//v1/cdn/spaces/me?token=VF26nXY079vJIug3cgsrwwtt';
+
+    // versionNum = Axios.get(storyblokVersionUrl)
+    // .then(function (response) {
+    // console.log('story blok version response.data')
+    // console.log(response.data)
+    // url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt' + '&cv=' + versionNum
+    // return response.data.space.version
+    // })
+    // .catch(function (error) {
+    // console.log(error)
+    // })
+
+    var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt' + '&cv=1574542265'
+
+    //var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt'
+    
     return Axios.get(url)
       .then(function (response) {
         context.commit('pushSingleBlog', response.data)
