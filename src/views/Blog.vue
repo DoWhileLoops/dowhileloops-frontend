@@ -1,7 +1,6 @@
 /* eslint-disable */
 <template>
     <v-container fill-height fluid grid-list-xl>
-        <h1>BLOGGITY</h1>
         <v-layout wrap>
             <v-flex xs12 v-bind:key="filter">
                 <v-btn 

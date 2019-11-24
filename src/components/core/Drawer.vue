@@ -9,10 +9,10 @@
     mobile-break-point="991"
     width="260"
   >
-    <v-img
+    <!-- <v-img
       :src="image"
       height="100%"
-    >
+    > -->
       <v-layout
         class="fill-height"
         tag="v-list"
@@ -29,7 +29,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            DOWHILELOOPS
+            dOWHILELOOPS
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
@@ -61,7 +61,7 @@
           </v-list-tile-title> -->
         </v-list-tile>
       </v-layout>
-    </v-img>
+    <!-- </v-img> -->
   </v-navigation-drawer>
 </template>
 
@@ -105,44 +105,44 @@ export default {
       },
       {
         to: '/about',
-        icon: 'mdi-contacts',
-        text: 'About'
-      },
-      {
-        to: '/dashboard',
-        icon: 'mdi-view-dashboard',
-        text: 'Dashboard'
-      },
-      {
-        to: '/user-profile',
         icon: 'mdi-account',
-        text: 'User Profile'
-      },
-      {
-        to: '/table-list',
-        icon: 'mdi-clipboard-outline',
-        text: 'Table List'
-      },
-      {
-        to: '/typography',
-        icon: 'mdi-format-font',
-        text: 'Typography'
-      },
-      {
-        to: '/icons',
-        icon: 'mdi-chart-bubble',
-        text: 'Icons'
-      },
-      {
-        to: '/maps',
-        icon: 'mdi-map-marker',
-        text: 'Maps'
-      },
-      {
-        to: '/notifications',
-        icon: 'mdi-bell',
-        text: 'Notifications'
-      }
+        text: 'About'
+      }//,
+      // {
+      //   to: '/dashboard',
+      //   icon: 'mdi-view-dashboard',
+      //   text: 'Dashboard'
+      // },
+      // {
+      //   to: '/user-profile',
+      //   icon: 'mdi-account',
+      //   text: 'User Profile'
+      // },
+      // {
+      //   to: '/table-list',
+      //   icon: 'mdi-clipboard-outline',
+      //   text: 'Table List'
+      // },
+      // {
+      //   to: '/typography',
+      //   icon: 'mdi-format-font',
+      //   text: 'Typography'
+      // },
+      // {
+      //   to: '/icons',
+      //   icon: 'mdi-chart-bubble',
+      //   text: 'Icons'
+      // },
+      // {
+      //   to: '/maps',
+      //   icon: 'mdi-map-marker',
+      //   text: 'Maps'
+      // },
+      // {
+      //   to: '/notifications',
+      //   icon: 'mdi-bell',
+      //   text: 'Notifications'
+      // }
     ]
   }),
   computed: {

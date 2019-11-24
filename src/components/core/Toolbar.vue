@@ -19,12 +19,13 @@
         >
           <v-icon>mdi-view-list</v-icon>
         </v-btn>
-        {{ title }}
+        <!-- {{ title == 'Home' ? 'Accumulated Content From A Life Nerded Out.' : title}} -->
+        {{headingContent}}
       </v-toolbar-title>
     </div>
 
     <v-spacer />
-    <v-toolbar-items>
+    <!-- <v-toolbar-items>
       <v-flex
         align-center
         layout
@@ -87,7 +88,7 @@
           <v-icon color="tertiary">mdi-account</v-icon>
         </router-link>
       </v-flex>
-    </v-toolbar-items>
+    </v-toolbar-items> -->
   </v-toolbar>
 </template>
 
@@ -109,7 +110,23 @@ export default {
     title: null,
     responsive: false
   }),
-
+  computed: 
+  { 
+    headingContent: function () {
+      if(this.title == 'Home'){
+        if(!this.responsive){
+          return 'Accumulated Content From A Life Nerded Out.'
+        }else{
+          return 'doWhileLoops'
+        }
+      }else if(this.title == 'SingleBlog') {
+        //return 'Tips & Tricks'        
+      }
+      else{
+        return this.title
+      } 
+    }
+  },
   watch: {
     '$route' (val) {
       this.title = val.name

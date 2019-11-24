@@ -26,12 +26,12 @@ export default [
   },
   {
     path: '/blog/:id',
-    name: 'SingleBlog',
+    name: 'Tips & Tricks',
     view: 'SingleBlog'
   },
   {
     path: '/blog',
-    name: 'Blog',
+    name: 'Tips & Tricks',
     view: 'Blog'
   },
   {
@@ -72,7 +72,7 @@ export default [
   },
   {
     path: '*',
-    name: 'NotFound',
+    name: 'I\'m sorry, Dave.',
     view: 'NotFound'
   }
 ]
