@@ -22,13 +22,16 @@
                 v-if="row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All'"  
                 v-bind:key="row.uid" 
                 v-bind="row">
-                    <material-link-card
-                        v-bind:rowData="row"
-                        title="Revenue"
-                        value="$34,245"
-                        sub-icon="mdi-calendar"
-                        sub-text="asdf"
-                    />
+                 <material-content-card
+                      color="info"
+                      type="Line"
+                      v-bind:rowData="row"
+                    >
+                    <h4 class="title font-weight-light">{{row.title}}</h4>
+                    <p class="category d-inline-flex font-weight-light">
+                      {{row.shortDescription}}
+                    </p>
+                </material-content-card>
             </v-flex>
         </v-layout>
     </v-container>

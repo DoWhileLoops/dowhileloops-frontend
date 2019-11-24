@@ -4,7 +4,7 @@
         <v-layout wrap>
             <v-flex xs12 v-bind:key="filter">
                 <v-btn 
-                color="success"
+                color="info"
                 v-for="(entry, index) in filterButtons"
                 :item="entry"
                 :key="index"
@@ -13,7 +13,7 @@
                 >
                     {{entry}}
                 </v-btn>
-            </v-flex>
+            </v-flex>            
             <v-flex sm6
                 xs12
                 md6
@@ -22,15 +22,18 @@
                 v-if="row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All'"  
                 v-bind:key="row.uid" 
                 v-bind="row">
-                    <material-link-card
-                        v-bind:rowData="row"
-                        title="Revenue"
-                        value="$34,245"
-                        sub-icon="mdi-calendar"
-                        sub-text="asdf"
-                    />
+                    <material-content-card
+                      color="info"
+                      type="Line"
+                      v-bind:rowData="row"
+                    >
+                        <h4 class="title font-weight-light">{{row.title}}</h4>
+                        <p class="category d-inline-flex font-weight-light">
+                          {{row.shortDescription}}
+                        </p>
+                    </material-content-card>
             </v-flex>
-        </v-layout>
+            </v-layout>        
     </v-container>
 </template>
 

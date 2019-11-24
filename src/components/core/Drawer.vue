@@ -49,7 +49,7 @@
           />
         </v-list-tile>
         <v-list-tile
-          active-class="success"
+          active-class="info"
           class="v-list-item v-list__tile--buy"
           to="/upgrade"
         >
@@ -107,42 +107,42 @@ export default {
         to: '/about',
         icon: 'mdi-account',
         text: 'About'
-      }//,
-      // {
-      //   to: '/dashboard',
-      //   icon: 'mdi-view-dashboard',
-      //   text: 'Dashboard'
-      // },
-      // {
-      //   to: '/user-profile',
-      //   icon: 'mdi-account',
-      //   text: 'User Profile'
-      // },
-      // {
-      //   to: '/table-list',
-      //   icon: 'mdi-clipboard-outline',
-      //   text: 'Table List'
-      // },
-      // {
-      //   to: '/typography',
-      //   icon: 'mdi-format-font',
-      //   text: 'Typography'
-      // },
-      // {
-      //   to: '/icons',
-      //   icon: 'mdi-chart-bubble',
-      //   text: 'Icons'
-      // },
-      // {
-      //   to: '/maps',
-      //   icon: 'mdi-map-marker',
-      //   text: 'Maps'
-      // },
-      // {
-      //   to: '/notifications',
-      //   icon: 'mdi-bell',
-      //   text: 'Notifications'
-      // }
+      },
+      {
+        to: '/dashboard',
+        icon: 'mdi-view-dashboard',
+        text: 'Dashboard'
+      },
+      {
+        to: '/user-profile',
+        icon: 'mdi-account',
+        text: 'User Profile'
+      },
+      {
+        to: '/table-list',
+        icon: 'mdi-clipboard-outline',
+        text: 'Table List'
+      },
+      {
+        to: '/typography',
+        icon: 'mdi-format-font',
+        text: 'Typography'
+      },
+      {
+        to: '/icons',
+        icon: 'mdi-chart-bubble',
+        text: 'Icons'
+      },
+      {
+        to: '/maps',
+        icon: 'mdi-map-marker',
+        text: 'Maps'
+      },
+      {
+        to: '/notifications',
+        icon: 'mdi-bell',
+        text: 'Notifications'
+      }
     ]
   }),
   computed: {

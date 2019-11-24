@@ -4,7 +4,7 @@ export default {
   tertiary: '#495057',
   accent: '#82B1FF',
   error: '#f55a4e',
-  info: '#00d3ee',
+  info: '#1276ae',
   success: '#5cb860',
   warning: '#ffa21a'
 }
