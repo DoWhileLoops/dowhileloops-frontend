@@ -1,8 +1,11 @@
 <template>
-    <div v-if="story">
-        <component :key="story.id" :blok="story.content" v-bind:is="story.content.component"></component>
-    </div>
-        
+    <v-container fill-height fluid grid-list-xl v-if="story">
+        <v-layout wrap>
+            <v-flex lg12>
+                <component :key="story.id" :blok="story.content" v-bind:is="story.content.component"></component>
+            </v-flex>
+        </v-layout>
+    </v-container>    
 </template>
 
 <script>

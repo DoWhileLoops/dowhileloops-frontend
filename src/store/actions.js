@@ -32,7 +32,9 @@ export default {
     // console.log(error)
     // })
 
-    var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt' + '&cv=1574542265'
+    var versionNum = '1574628520'
+
+    var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt' + '&cv=' + versionNum
 
     //var url = 'https://api.storyblok.com/v1/cdn/stories/' + payload + '?token=VF26nXY079vJIug3cgsrwwtt'
     
