@@ -35,7 +35,7 @@
                         </p>
                     </material-content-card>
             </v-flex>
-            <v-flex  v-if="rows.length === 0" class="spinner">
+            <v-flex v-if="rows.length === 0" class="spinner">
                 <v-progress-circular indeterminate :size="200" :width="25" color="info"></v-progress-circular>
             </v-flex>
         </v-layout>        

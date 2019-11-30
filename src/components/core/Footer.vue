@@ -11,7 +11,11 @@
       >
         <a
           :href="link.Link"
-          class="tertiary--text footer-links">{{ link.name }}</a>
+          class="tertiary--text footer-links">
+          <v-icon size="25">
+            {{link.Icon}}
+          </v-icon>
+          </a>
       </span>
     </div>
     <v-spacer/>
@@ -19,12 +23,8 @@
       &copy;
       {{ (new Date()).getFullYear() }}
       <a
-        href="https://www.creative-tim.com/"
-        target="_blank">Creative Tim</a>, made with
-      <v-icon
-        color="tertiary"
-        size="17">mdi-heart</v-icon>
-      for a better web
+        href="/#"
+        target="_blank">DoWhileLoops</a>
     </span>
   </v-footer>
 </template>
@@ -33,10 +33,10 @@
 export default {
   data: () => ({
     links: [
-      { name: 'Home', Link: '/#' },
-      { name: 'Creative Tim', Link: 'https://www.creative-tim.com' },
-      { name: 'About Us', Link: 'https://creative-tim.com/presentation' },
-      { name: 'Blog', Link: 'https://blog.creative-tim.com' }
+      { name: 'Home', Link: '/#', Icon: 'mdi-home' },
+      { name: 'LinkedIn', Link: 'https://www.linkedin.com/in/christopher-clemons-53839b107', Icon: 'mdi-linkedin-box' },
+      { name: 'GitHub', Link: 'https://github.com/clemCode', Icon: 'mdi-github-circle' },
+      { name: 'Soundcloud', Link: 'https://soundcloud.com/dowhileloops', Icon: 'mdi-soundcloud' }
     ]
   })
 }
