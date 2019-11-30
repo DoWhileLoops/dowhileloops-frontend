@@ -21,7 +21,7 @@
                 md6
                 lg3 
                 v-for="row in rows" 
-                v-if="row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All'"  
+                v-if="rows.length > 0 && (row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All')"  
                 v-bind:key="row.uid" 
                 v-bind="row">
                     <material-content-card
@@ -35,7 +35,10 @@
                         </p>
                     </material-content-card>
             </v-flex>
-            </v-layout>        
+            <v-flex  v-if="rows.length === 0" class="spinner">
+                <v-progress-circular indeterminate :size="200" :width="25" color="info"></v-progress-circular>
+            </v-flex>
+        </v-layout>        
     </v-container>
 </template>
 
@@ -69,5 +72,8 @@ export default {
     color:white;
     text-align:center;
     padding-top: 10px;
+}
+.spinner{
+    text-align:center;
 }
 </style>
