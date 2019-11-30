@@ -1,19 +1,21 @@
 /* eslint-disable */
 <template>
     <v-container fill-height fluid grid-list-xl>
-        <v-layout wrap>
-            <v-flex xs12 v-bind:key="filter">
-                <v-btn 
-                color="info"
-                v-for="(entry, index) in filterButtons"
+        <v-layout wrap align-center>
+            <v-flex 
+                xs6
+                md3
+                lg3 v-bind:key="filter" v-for="(entry, index) in filterButtons">
+                <v-card md3 xs6 :height="60"
+                color="#1276ae"
                 :item="entry"
                 :key="index"
                 @click="filter = entry; active = index;"
                 :class="{ active: entry == filter }"
                 >
-                    {{entry}}
-                </v-btn>
-            </v-flex>            
+                    <h3 class="buttonText">{{entry}}</h3>
+                </v-card>
+            </v-flex>   
             <v-flex sm6
                 xs12
                 md6
@@ -44,7 +46,7 @@ export default {
     data: function () {
         return {
         fKey: "source",
-        filterButtons: ['Tech', 'Tunes', 'Tips & Tricks', 'All'],
+        filterButtons: ['Tech', 'Tunes', 'Blog', 'All'],
         filters: ['GitHub', 'SoundCloud', 'Storyblok', 'All'],
         filter: "All",
         rows: []
@@ -61,3 +63,11 @@ export default {
     }
 }
 </script>
+
+<style>
+.buttonText{
+    color:white;
+    text-align:center;
+    padding-top: 10px;
+}
+</style>
