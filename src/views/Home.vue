@@ -5,7 +5,8 @@
             <v-flex 
                 xs6
                 md3
-                lg3 v-bind:key="filter" v-for="(entry, index) in filterButtons">
+                lg3 v-bind:key="filter" v-for="(entry, index) in filterButtons"
+                class="buttonCard">
                 <v-card md3 xs6 :height="60"
                 color="#1276ae"
                 :item="entry"
@@ -72,6 +73,9 @@ export default {
     color:white;
     text-align:center;
     padding-top: 10px;
+}
+.buttonCard{
+    cursor: pointer;
 }
 .spinner{
     text-align:center;

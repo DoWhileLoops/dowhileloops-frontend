@@ -1,8 +1,11 @@
 <template>
     <v-container fill-height fluid grid-list-xl v-if="story">
         <v-layout wrap>
-            <v-flex lg12>
+            <v-flex lg12 v-if="story.content.body.length > 0">
                 <component :key="story.id" :blok="story.content" v-bind:is="story.content.component"></component>
+            </v-flex>
+            <v-flex v-if="story.content.body.length === 0" class="spinner">
+                <v-progress-circular indeterminate :size="200" :width="25" color="info"></v-progress-circular>
             </v-flex>
         </v-layout>
     </v-container>    
@@ -43,3 +46,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.spinner{
+    text-align:center;
+}
+</style>

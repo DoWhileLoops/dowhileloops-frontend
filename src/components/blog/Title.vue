@@ -1,9 +1,9 @@
 <template>
-  <div class="MyBlock">
+  <div class="titleBlok">
     <div> 
       <h1>
         {{blok.title}}
-        </h1>
+      </h1>
     </div>
   </div>
 </template>

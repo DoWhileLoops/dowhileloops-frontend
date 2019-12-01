@@ -1,5 +1,5 @@
 <template>
-  <div class="MyBlock">
+  <div class="pBlok">
     <div> 
       <p>
         {{blok.text}}
