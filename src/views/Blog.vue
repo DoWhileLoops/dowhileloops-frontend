@@ -1,25 +1,32 @@
-/* eslint-disable */
 <template>
-    <v-container fill-height fluid grid-list-xl>
-        <v-layout wrap>
-            <v-flex xs12 v-bind:key="filter">
-                <v-btn 
-                color="success"
-                v-for="(entry, index) in filterButtons"
-                :item="entry"
-                :key="index"
-                @click="filter = entry; active = index;"
-                :class="{ active: entry == filter }"
-                >
-                    {{entry}}
-                </v-btn>
-            </v-flex>
-            <v-flex sm6
+  <v-container
+    fluid
+    grid-list-xl
+    fill-height>
+    <v-layout
+      justify-center
+      align-center
+    >
+      <v-flex xs12>
+        <material-card
+          color="#1276ae">
+          <div
+            slot="header"
+          >
+            <div class="title font-weight-light mb-2">
+                Possibly useful ramblings on various topics.
+            </div>
+          </div>
+
+          <v-card-text>
+            <v-layout
+              row
+              wrap>
+              <v-flex sm6
                 xs12
                 md6
                 lg3 
                 v-for="row in rows" 
-                v-if="row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All'"  
                 v-bind:key="row.uid" 
                 v-bind="row">
                  <material-content-card
@@ -33,8 +40,12 @@
                     </p>
                 </material-content-card>
             </v-flex>
-        </v-layout>
-    </v-container>
+            </v-layout>
+          </v-card-text>
+        </material-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -43,10 +54,7 @@ export default {
     name: 'Home',
     data: function () {
         return {
-        fKey: "source",
-        filterButtons: ['Tech', 'Tunes', 'Tips & Tricks', 'All'],
-        filters: ['GitHub', 'SoundCloud', 'Storyblok', 'All'],
-        filter: "All",
+        //TODO: IMPLEMENT FILTERING ONCE AMOUNT GROWS
         rows: []
         }
     },
@@ -57,7 +65,7 @@ export default {
             await this.$store.dispatch('fetchDoWhileData')
         }
         
-        this.rows = this.$store.getters.getAllRows.filter(x => x.source == 'Storyblok');
+        this.rows = this.$store.getters.getAllShuffledRows.filter(x => x.source == 'Storyblok');
         
     }
 }
