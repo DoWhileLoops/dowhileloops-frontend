@@ -9,8 +9,17 @@
         v-for="link in links"
         :key="link.name"
       >
+        <a v-if="link.name === 'Home'"
+          :href="link.Link"
+          class="tertiary--text footer-links">
+          <v-icon size="25">
+            {{link.Icon}}
+          </v-icon>
+        </a>
         <a
           :href="link.Link"
+          v-else
+          target="_blank"
           class="tertiary--text footer-links">
           <v-icon size="25">
             {{link.Icon}}

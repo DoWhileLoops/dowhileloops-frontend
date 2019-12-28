@@ -29,7 +29,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            dOWHILELOOPS
+            DOWHILELOOPS
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
