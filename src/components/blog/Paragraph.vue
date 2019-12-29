@@ -1,8 +1,8 @@
 <template>
   <div class="pBlok">
     <div> 
-      <p>
-        {{blok.text}}
+      <p class='mr-4 ml-4'>
+        {{ blok.text }}
         </p>
     </div>
   </div>

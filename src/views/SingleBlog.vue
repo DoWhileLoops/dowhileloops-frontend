@@ -2,7 +2,9 @@
     <v-container fill-height fluid grid-list-xl v-if="story">
         <v-layout wrap>
             <v-flex lg12 v-if="story.content.body.length > 0">
-                <component :key="story.id" :blok="story.content" v-bind:is="story.content.component"></component>
+                <div class="v-card v-sheet theme--light elevation-2 pb-4" style="margin-bottom: 24px; margin-top: 48px;">
+                    <component :key="story.id" :blok="story.content" v-bind:is="story.content.component"></component>
+                </div>
             </v-flex>
             <v-flex v-if="story.content.body.length === 0" class="spinner">
                 <v-progress-circular indeterminate :size="200" :width="25" color="info"></v-progress-circular>

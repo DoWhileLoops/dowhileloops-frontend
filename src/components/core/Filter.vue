@@ -156,6 +156,6 @@ export default {
 <style lang="scss">
   .v-avatar,
   .v-responsive {
-    cursor: pointer;
+    // cursor: pointer;
   }
 </style>
