@@ -26,7 +26,7 @@ export default [
   },
   {
     path: '/blog/:id',
-    name: 'Tips & Tricks',
+    name: 'SingleBlog',
     view: 'SingleBlog'
   },
   {
