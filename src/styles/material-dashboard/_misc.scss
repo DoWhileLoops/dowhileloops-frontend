@@ -37,6 +37,13 @@ blockquote {
   }
 }
 
+hr{
+  margin: 20px 50px 0 50px;
+  height:3px;
+  background-color:$black-color;
+  border:none;
+}
+
 b,
 strong {
   font-size: $font-size-small;

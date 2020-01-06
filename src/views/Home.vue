@@ -9,16 +9,7 @@
                     <!-- TODO: write copy and get logo, arrange 
                                 also navbar title if !responsive
                                 also text resize here -->
-                    <h1 class="card-title font-weight-light">DoWhileLoops</h1>
-                    <!-- <p>muchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtextmuchtext</p> -->
-
-                    <!-- <h6 class="category font-weight-thin mb-3">CEO / CO-FOUNDER</h6> -->
-                    <!-- <p class="card-description font-weight-light">Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p> -->
-                    <!-- <v-btn
-                    color="success"
-                    round
-                    class="font-weight-light"
-                    >Follow</v-btn> -->
+                    <h1 class="card-title">DoWhileLoops</h1>
                 </v-card-text>
                 </material-card>
             </v-flex>
@@ -30,17 +21,19 @@
                             md3
                             lg3 v-bind:key="filter" v-for="(entry, index) in filterButtons"
                             class="buttonCard">
-                            <v-card md3 xs6 :height="60"
+                            <v-card md3 xs6 :height="80"
                             color="#1276ae"
                             :item="entry"
                             :key="index"
                             @click="filter = entry; active = index;"
                             :class="{ active: entry == filter }"
+                            class="filterCard"
                             >
-                                <h3 class="buttonText">{{ entry }}</h3>
+                                <h2 class="buttonText">{{ entry }}</h2>
                             </v-card>
                         </v-flex>   
                         </v-layout>
+                        <hr>
                     <v-layout row wrap>
                         <v-flex sm6
                             xs12
@@ -97,6 +90,14 @@ export default {
 </script>
 
 <style>
+.card-title{
+    font-size: 5rem !important;
+}
+.active{
+    text-decoration: underline white;
+    text-decoration-skip-ink: none;
+    text-underline-position: under;
+}
 .splashCard{
     background-color: #1276ae !important;
     color:white !important;
@@ -109,7 +110,11 @@ export default {
 .buttonCard{
     cursor: pointer;
 }
+.filterCard:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
 .spinner{
     text-align:center;
 }
+
 </style>

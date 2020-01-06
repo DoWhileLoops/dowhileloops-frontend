@@ -8,7 +8,7 @@
   >
     <div class="v-toolbar-title">
       <v-toolbar-title
-        class="tertiary--text font-weight-light"
+        class="tertiary--text"
       >
         <v-btn
           v-if="responsive"
@@ -22,7 +22,7 @@
         
         <span v-if="headingContent === 'SingleBlog'" >
           <a href="/blog" class="backButton tertiary--text">
-          <v-icon>mdi-arrow-left</v-icon>
+          <v-icon color="darkIcon">mdi-arrow-left</v-icon>
             Back To All Blogs
           </a>
         </span>
@@ -35,12 +35,6 @@
     <v-spacer />
   </v-toolbar>
 </template>
-
-<style>
-  .backButton{
-    color:
-  }
-</style>
 
 <script>
 
@@ -67,7 +61,7 @@ export default {
         if (!this.responsive) {
           return 'Accumulated Content From A Life Nerded Out.'
         } else {
-          return 'doWhileLoops'
+          return 'DoWhileLoops'
         }
       }
       else {

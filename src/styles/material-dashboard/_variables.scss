@@ -1,5 +1,6 @@
 // Importing All Material Design Colors
 @import "./colors";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 //  Brand Colors
 $brand-primary:                    $purple !default;
@@ -54,16 +55,18 @@ $sidebar-bg:                        rgba(27, 27, 27, .74) !default;
 $font-size-mini:                    9px !default;
 $font-size-small:                   12px !default;
 $font-size-default:                 16px !default;
-$font-size-avatar-title:            18px !default;
+$font-size-avatar-title:            24px !default;
 $font-size-alert-icon:              30px !default;
 $font-size-big:                     36px !default;
 $font-size-small-tag:               65% !default;
 $font-size-toolbar-title:           $font-size-avatar-title;
 $font-size-toolbar-items:           20px !default;
+// $font-size-h1:                      3.3125rem;
 $font-size-h1:                      3.3125rem;
 $font-size-h2:                      2.25rem !default;
 $font-size-h3:                      1.5625rem;
-$font-size-h4:                      1.125rem !default;
+// $font-size-h4:                      1.125rem !default;
+$font-size-h4:                      1.2rem !default;
 $font-size-h5:                      1.0625rem !default;
 $font-size-h6:                      0.75rem !default;
 $font-paragraph:                    $font-size-default !default;
@@ -72,7 +75,8 @@ $font-size-chart-label:             .730rem !default;
 // Font Weight
 $font-weight-lighter:               300 !default;
 $font-weight-base:                  400 !default;
-$font-weight-bolder:                500 !default;
+$font-weight-bolder:                450 !default;
+$font-weight-boldest:               550 !default;
 
 // Opacity Colors
 $black-opacity-3:                   rgba(180, 180, 180, .3) !default;
@@ -120,8 +124,11 @@ $card-stats-icons-dim:              56px !default;
 $card-profile-avatar-pos:           -50px !default;
 
 // Typography
-$font-family-sans-serif:            'Roboto', 'Helvetica', 'Arial', sans-serif !default;
-$font-family-serif:                 'Roboto Slab', 'Times New Roman', serif !default;
+//$font-family-sans-serif:            'Roboto', 'Helvetica', 'Arial', sans-serif !default;
+//$font-family-serif:                 'Roboto Slab', 'Times New Roman', serif !default;
+
+$font-family-sans-serif:            'Montserrat', 'Helvetica', 'Arial', sans-serif !default;
+$font-family-serif:                 'Lora', 'Times New Roman', serif !default;
 
 // Tooltips
 $tooltip-min-width:                 130px !default;

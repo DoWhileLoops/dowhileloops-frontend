@@ -34,9 +34,9 @@
                       type="Line"
                       v-bind:rowData="row"
                     >
-                    <h4 class="title font-weight-light">{{row.title}}</h4>
+                    <h4 class="title font-weight-light">{{ row.title }}</h4>
                     <p class="category d-inline-flex font-weight-light">
-                      {{row.shortDescription}}
+                      {{ row.shortDescription }}
                     </p>
                 </material-content-card>
             </v-flex>

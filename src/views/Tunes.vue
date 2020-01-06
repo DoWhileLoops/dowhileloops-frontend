@@ -37,6 +37,7 @@
                 <iframe src="https://open.spotify.com/embed/playlist/676IRGFDzNZRikFy2ZjZ8D" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </v-flex>
             </v-layout>
+            <hr>
             <v-layout
               row
               wrap>
@@ -54,7 +55,7 @@
                     >
                     <h4 class="title font-weight-light">{{row.title}}</h4>
                     <p class="category d-inline-flex font-weight-light">
-                      {{row.shortDescription}}
+                      {{ row.shortDescription }}
                     </p>
                 </material-content-card>
             </v-flex>

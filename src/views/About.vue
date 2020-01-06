@@ -25,7 +25,7 @@
               md9
               >
                 <!-- TODO: Redo this copy -->
-                <p class="card-description font-weight-light">
+                <p>
                   I'm Chris Clemons, a .NET developer based in Seattle. I've been programming professionally since 2016, and before that, I was a performing musician.
                 </p>
                 <p class="card-description font-weight-light">

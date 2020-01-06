@@ -12,6 +12,7 @@
     letter-spacing: 0 !important;
     font-size: $font-size-h4 !important;
     margin-bottom: $card-title-margin !important;
+    font-weight: $font-weight-bolder !important;
   }
 
   .v-divider {
@@ -82,6 +83,14 @@
 @include card-header-color('green', $brand-success, $green-400, $green-600);
 @include card-header-color('orange', $brand-warning, $orange-400, $orange-600);
 @include card-header-color('purple', $brand-primary, $purple-400, $purple-600);
+
+.v-card--material-content.v-card {
+  border: 1px solid;
+}
+
+.v-card--material-content.v-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
 
 .v-card--material-stats.v-card {
   .v-offset {
