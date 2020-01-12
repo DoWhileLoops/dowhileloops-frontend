@@ -4,35 +4,45 @@
     app
     flat
     prominent
-    style="background: #eee;"
+    style="background: #300707;"
   >
-    <div class="v-toolbar-title">
+    <div v-if="responsive" class="v-toolbar-title">
       <v-toolbar-title
         class="tertiary--text"
       >
         <v-btn
-          v-if="responsive"
           class="default v-btn--simple"
           dark
           icon
           @click.stop="onClickBtn"
         >
           <v-icon>mdi-view-list</v-icon>
-        </v-btn>
+        </v-btn> 
         
-        <span v-if="headingContent === 'SingleBlog'" >
+        <!-- <span v-if="headingContent === 'SingleBlog'" >
           <a href="/blog" class="backButton tertiary--text">
           <v-icon color="darkIcon">mdi-arrow-left</v-icon>
             Back To All Blogs
           </a>
         </span>
 
-        {{ headingContent !== 'SingleBlog' ? headingContent : '' }}
-
+        {{ headingContent !== 'SingleBlog' ? headingContent : '' }} -->
       </v-toolbar-title>
     </div>
-
-    <v-spacer />
+    <div v-else class="navOuterDiv">
+      <v-layout row align-center justify-center>
+        <v-flex 
+          xs6 md3 lg3 
+          v-for="(link, i) in links" 
+          :key="link.text" class="navBtn"
+          v-on:click="onNavBtnClick(link)">
+        <span>
+            {{ link.text }}
+        </span>  
+        </v-flex>        
+      </v-layout>
+  </div>
+    
   </v-toolbar>
 </template>
 
@@ -52,7 +62,34 @@ export default {
       'Another One'
     ],
     title: null,
-    responsive: false
+    responsive: false,
+    links: [
+      {
+        to: '/',
+        icon: 'mdi-home',
+        text: 'Home'
+      },
+      {
+        to: '/tech',
+        icon: 'mdi-code-brackets',
+        text: 'Tech'
+      },
+      {
+        to: '/tunes',
+        icon: 'mdi-music',
+        text: 'Tunes'
+      },
+      {
+        to: '/blog',
+        icon: 'mdi-lead-pencil',
+        text: 'Blog'
+      },
+      {
+        to: '/about',
+        icon: 'mdi-account',
+        text: 'About'
+      }
+    ]
   }),
   computed: 
   { 
@@ -97,6 +134,9 @@ export default {
       } else {
         this.responsive = false
       }
+    },
+    onNavBtnClick(link) {
+      this.$router.push({ name: link.text })      
     }
   }
 }
@@ -105,5 +145,16 @@ export default {
 <style>
   #core-toolbar a {
     text-decoration: none;
+  }
+  .navOuterDiv{
+    width:100%;
+    text-align:center
+  }
+  .navBtn{
+    cursor: pointer;
+    color:white
+  }
+  .navBtn:hover{
+    box-shadow: 0 14px 28px rgba(16, 179, 143, 0.671), 0 10px 10px rgba(231, 5, 5, 0.904) !important;
   }
 </style>

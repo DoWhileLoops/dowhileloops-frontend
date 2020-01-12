@@ -41,7 +41,7 @@
                             lg3 
                             v-for="row in rows" 
                             v-if="rows.length > 0 && (row['source'] === filters[filterButtons.indexOf(filter)] || filter === 'All')"  
-                            v-bind:key="row.uid" 
+                            :key="row.uid" 
                             v-bind="row">
                                 <material-content-card
                                 color="info"

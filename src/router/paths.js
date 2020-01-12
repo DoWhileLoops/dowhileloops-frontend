@@ -31,7 +31,7 @@ export default [
   },
   {
     path: '/blog',
-    name: 'Tips & Tricks',
+    name: 'Blog',
     view: 'Blog'
   },
   {

@@ -6,13 +6,10 @@
     dark
     floating
     persistent
-    mobile-break-point="991"
+    mobile-break-point="99100"
     width="260"
   >
-    <!-- <v-img
-      :src="image"
-      height="100%"
-    > -->
+  <!--mobile-break-point is hack - TODO - figure out-->
       <v-layout
         class="fill-height"
         tag="v-list"
@@ -48,20 +45,7 @@
             v-text="link.text"
           />
         </v-list-tile>
-        <v-list-tile
-          active-class="info"
-          class="v-list-item v-list__tile--buy"
-          to="/upgrade"
-        >
-          <!-- <v-list-tile-action>
-            <v-icon>mdi-package-up</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title class="font-weight-light">
-            Upgrade To PRO
-          </v-list-tile-title> -->
-        </v-list-tile>
       </v-layout>
-    <!-- </v-img> -->
   </v-navigation-drawer>
 </template>
 
@@ -149,6 +133,11 @@ export default {
     ...mapState('app', ['image', 'color']),
     inputValue: {
       get () {
+        // if (this.$store.state.app.drawer === null) {
+        //   return false
+        // } else {
+        //   return this.$store.state.app.drawer
+        // }
         return this.$store.state.app.drawer
       },
       set (val) {
@@ -159,10 +148,9 @@ export default {
       return this.$t('Layout.View.items')
     }
   },
-
   methods: {
     ...mapMutations('app', ['setDrawer', 'toggleDrawer'])
-  }
+  }  
 }
 </script>
 
