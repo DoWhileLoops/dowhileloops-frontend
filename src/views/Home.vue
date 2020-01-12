@@ -9,7 +9,7 @@
                     <!-- TODO: write copy and get logo, arrange 
                                 also navbar title if !responsive
                                 also text resize here -->
-                    <h1 class="card-title">DoWhileLoops</h1>
+                    <!-- <h1 class="card-title">DoWhileLoops</h1> -->
                 </v-card-text>
                 </material-card>
             </v-flex>

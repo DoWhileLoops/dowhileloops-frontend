@@ -9,11 +9,11 @@
     >
       <v-flex xs12>
         <material-card color="#1276ae">
-            <div slot="header">
+            <!-- <div slot="header">
               <div class="title font-weight-light mb-2">
-                DOWHILELOOPS
+                DoWhileLoops
             </div>
-            </div>            
+            </div>             -->
             
             <v-card-text class="text-xs-center">
               <v-layout 
@@ -26,14 +26,11 @@
               >
                 <!-- TODO: Redo this copy -->
                 <p>
-                  I'm Chris Clemons, a .NET developer based in Seattle. I've been programming professionally since 2016, and before that, I was a performing musician.
+                  I'm Chris Clemons, a .NET developer based in Seattle. I've been programming professionally since 2016, and obsessed with music since time immemorial.
                 </p>
-                <p class="card-description font-weight-light">
-                  DoWhileLoops is meant to showcase work that I have done in both fields, as well as posts that will hopefully inform and entertain fellow enthusiasts.
+                <p>
+                  DoWhileLoops is meant to showcase work that I have done in both fields, as well as posts for fellow enthusiasts.
                 </p>
-                <p class="card-description font-weight-light">
-                  Please feel free to email me, or check out my LinkedIn for more details.
-                </p>                
               </v-flex>
               <v-flex
               sm12
