@@ -7,7 +7,7 @@
   >
     <v-card
       slot="offset"
-      v-bind:style="{'background-color': iconBackgroundColor}"
+      v-bind:style="{'background-color': '#173F67'}"
       class="pa-2"
       dark
     >
@@ -66,12 +66,7 @@ export default {
         if(this.rowData.source == 'GitHub') return 'mdi-github-circle';
         else if(this.rowData.source == 'SoundCloud') return 'mdi-soundcloud';
         else if(this.rowData.source == 'Storyblok') return 'mdi-lead-pencil';
-    },
-    iconBackgroundColor: function() {
-            if(this.rowData.source == 'GitHub') return '#24292e';
-            else if(this.rowData.source == 'SoundCloud') return '#f50';
-            else if(this.rowData.source == 'Storyblok') return '#1276AE';
-        }
+    }
   },
   methods: {
       openCardLink: function() {

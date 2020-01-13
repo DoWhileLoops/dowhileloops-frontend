@@ -19,15 +19,22 @@
             </v-flex>
             <v-flex xs8>
                     <h1 class="text-xs-center">DoWhileLoops</h1>
-                    <h3 class="text-xs-center">The Catchiest Tagline of Them All.</h3>
-                <material-card>
+                <material-card
+                    color="#173F67">
+                    <div
+                       slot="header"
+                    >
+                        <div class="title font-weight-light mb-2">
+                            The Catchiest Tagline of Them All.
+                        </div>
+                    </div>
                     <v-layout row>
                         <v-col cols="3">
                         <v-flex 
                             v-bind:key="filter" v-for="(entry, index) in filterButtons"
                             class="buttonCard">
                             <v-card :height="65"
-                            color="#1276ae"
+                            color="#173F67"
                             :item="entry"
                             :key="index"
                             @click="active = index; getShownRows(entry);"
@@ -47,7 +54,6 @@
                                 v-bind="row">
                                     <material-content-card
                                     color="info"
-                                    type="Line"
                                     v-bind:rowData="row"
                                     >
                                         <h4 class="title font-weight-light">{{ row.title }}</h4>

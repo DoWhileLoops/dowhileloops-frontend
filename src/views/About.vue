@@ -8,7 +8,7 @@
       align-center
     >
       <v-flex xs12>
-        <material-card color="#1276ae">
+        <material-card color="#173F67">
             <!-- <div slot="header">
               <div class="title font-weight-light mb-2">
                 DoWhileLoops
