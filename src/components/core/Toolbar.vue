@@ -8,7 +8,7 @@
   >
     <div v-if="responsive" class="v-toolbar-title">
       <v-toolbar-title
-        class="tertiary--text"
+        class="tertiary--text navTitle"
       >
         <v-btn
           class="default v-btn--simple"
@@ -24,9 +24,10 @@
           <v-icon color="darkIcon">mdi-arrow-left</v-icon>
             Back To All Blogs
           </a>
-        </span>
+        </span>-->
 
-        {{ headingContent !== 'SingleBlog' ? headingContent : '' }} -->
+      <span class="">DoWhileLoops</span>
+        
       </v-toolbar-title>
     </div>
     <div v-else class="navOuterDiv">
@@ -54,13 +55,6 @@ import {
 
 export default {
   data: () => ({
-    notifications: [
-      'Mike, John responded to your email',
-      'You have 5 new tasks',
-      'You\'re now a friend with Andrew',
-      'Another Notification',
-      'Another One'
-    ],
     title: null,
     responsive: false,
     links: [
@@ -145,6 +139,9 @@ export default {
 <style>
   #core-toolbar a {
     text-decoration: none;
+  }
+  .toolbarTitle{
+    color:white;
   }
   .navOuterDiv{
     width:100%;
