@@ -1,5 +1,6 @@
 .v-card {
-  box-shadow: $card-shadow !important;
+  // box-shadow: $card-shadow !important;
+  box-shadow: none !important;
   border-radius: $border-radius-base;
 
   .category {
@@ -173,4 +174,14 @@
   .v-table {
     background-color: transparent;
   }
+}
+
+.v-card.v-sheet{
+  background-color: $bg-primary;
+}
+
+.v-card.v-sheet.v-card--material-content{
+  background-color: $bg-light;
+  border-width: 1px;
+  border-color: $bg-dark;
 }

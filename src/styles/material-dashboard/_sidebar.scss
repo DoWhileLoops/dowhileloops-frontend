@@ -1,5 +1,9 @@
+@import "./colors";
+
 .v-navigation-drawer {
   @include shadow-big();
+
+  background-color: $bg-dark !important;
 
   .v-list {
     background: $sidebar-bg;

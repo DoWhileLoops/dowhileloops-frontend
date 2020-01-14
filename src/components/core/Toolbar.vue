@@ -4,7 +4,6 @@
     app
     flat
     prominent
-    style="background: #300707;"
   >
     <div v-if="responsive" class="v-toolbar-title">
       <v-toolbar-title
@@ -19,27 +18,20 @@
           <v-icon>mdi-view-list</v-icon>
         </v-btn> 
         
-        <!-- <span v-if="headingContent === 'SingleBlog'" >
-          <a href="/blog" class="backButton tertiary--text">
-          <v-icon color="darkIcon">mdi-arrow-left</v-icon>
-            Back To All Blogs
-          </a>
-        </span>-->
-
       <span class="">DoWhileLoops</span>
         
       </v-toolbar-title>
     </div>
-    <div v-else class="navOuterDiv">
+    <div v-else class="nav-outerdiv">
       <v-layout row align-center justify-center>
         <v-flex 
           xs6 md3 lg3 
           v-for="(link, i) in links" 
-          :key="link.text" class="navBtn"
+          :key="link.text" class="nav-btn"
           v-on:click="onNavBtnClick(link)">
-        <span>
+        <h4>
             {{ link.text }}
-        </span>  
+        </h4>  
         </v-flex>        
       </v-layout>
   </div>
@@ -129,29 +121,9 @@ export default {
         this.responsive = false
       }
     },
-    onNavBtnClick(link) {
+    onNavBtnClick (link) {
       this.$router.push({ name: link.text })      
     }
   }
 }
 </script>
-
-<style>
-  #core-toolbar a {
-    text-decoration: none;
-  }
-  .toolbarTitle{
-    color:white;
-  }
-  .navOuterDiv{
-    width:100%;
-    text-align:center
-  }
-  .navBtn{
-    cursor: pointer;
-    color:white
-  }
-  .navBtn:hover{
-    box-shadow: 0 14px 28px rgba(16, 179, 143, 0.671), 0 10px 10px rgba(231, 5, 5, 0.904) !important;
-  }
-</style>
