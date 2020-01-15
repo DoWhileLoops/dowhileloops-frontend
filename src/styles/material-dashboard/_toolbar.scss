@@ -33,7 +33,7 @@
 
     .nav-btn:hover {
       cursor: pointer;
-      box-shadow: 0 14px 28px rgba(16, 179, 143, 0.671), 0 10px 10px rgba(231, 5, 5, 0.904) !important;
+      box-shadow: 0 10px 10px $bg-light, 0 10px 10px $bg-primary !important;
     }
 
     .v-toolbar__title {

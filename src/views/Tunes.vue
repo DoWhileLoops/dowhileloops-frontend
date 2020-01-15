@@ -9,7 +9,7 @@
     >
       <v-flex xs12>
         <material-card
-          color="#173F67">
+          color="#62727b">
           <div
             slot="header"
           >
@@ -77,14 +77,14 @@ export default {
         }
     },
     async created () {
-        var tryStore = this.$store.getters.getAllRows;
+        var tryStore = this.$store.getters.getAllShuffledRows;
 
         if (!tryStore) {
             await this.$store.dispatch('fetchDoWhileData')
         }
 
-        this.rows = this.$store.getters.getAllShuffledRows.filter(x => x.source == 'SoundCloud');
-        this.rows = this.rows.slice(0,8);
+        this.rows = this.$store.getters.getAllShuffledRows.filter(x => x.source == 'SoundCloud')
+        this.rows = this.rows.slice(0,4);
     }
 }
 </script>

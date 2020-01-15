@@ -11,30 +11,30 @@
       >
         <a v-if="link.name === 'Home'"
           :href="link.Link"
-          class="tertiary--text footer-links">
-          <v-icon size="25">
-            {{link.Icon}}
+          class="tertiary--text footer-links mr-4">
+          <v-icon size="35">
+            {{ link.Icon }}
           </v-icon>
         </a>
         <a
           :href="link.Link"
           v-else
           target="_blank"
-          class="tertiary--text footer-links">
-          <v-icon size="25">
-            {{link.Icon}}
+          class="tertiary--text footer-links mr-4">
+          <v-icon size="35">
+            {{ link.Icon }}
           </v-icon>
           </a>
       </span>
     </div>
     <v-spacer/>
-    <span class="font-weight-light copyright">
+    <!-- <span class="font-weight-light copyright">
       &copy;
       {{ (new Date()).getFullYear() }}
       <a
         href="/#"
         target="_blank">DoWhileLoops</a>
-    </span>
+    </span> -->
   </v-footer>
 </template>
 
