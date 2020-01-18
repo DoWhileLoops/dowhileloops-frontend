@@ -10,18 +10,11 @@
                 </material-card>
         </v-layout>
 
-        <v-layout v-else row wrap align-center>
-            <v-flex xs4>    
-                <!-- note - the height is controlling the centering of the content on the page-->
-                <svg class="logoImage" xmlns="http://www.w3.org/2000/svg" width="317.55" height="492.945" viewBox="0 0 317.55 492.945">
-                    <path id="Union_1" data-name="Union 1" d="M1889.807,254.055c-10.445-23.461,22.806-61.054,74.269-83.967,33.93-15.107,67.306-20.06,89.1-14.958l.261-.13V-133l152-88v104l-128,72V174.807a26.262,26.262,0,0,1,0,11.623V187h0l-.115-.029c-5.042,22.308-34.464,49.843-75.42,68.078-25.333,11.278-50.356,16.9-70.482,16.9C1910.66,271.945,1895.111,265.967,1889.807,254.055Z" transform="translate(-1887.888 221)" fill="#062C53"/>
-                </svg>
-                <!-- https://css-tricks.com/scale-svg/ -->
-                <!-- <svg class="logoImage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317.55 492.945">
-                    <path id="Union_1" data-name="Union 1" d="M1889.807,254.055c-10.445-23.461,22.806-61.054,74.269-83.967,33.93-15.107,67.306-20.06,89.1-14.958l.261-.13V-133l152-88v104l-128,72V174.807a26.262,26.262,0,0,1,0,11.623V187h0l-.115-.029c-5.042,22.308-34.464,49.843-75.42,68.078-25.333,11.278-50.356,16.9-70.482,16.9C1910.66,271.945,1895.111,265.967,1889.807,254.055Z" transform="translate(-1887.888 221)" fill="#062C53"/>
-                </svg> -->
+        <v-layout v-else row wrap align-center mt-1>
+            <v-flex lg5>    
+                <v-img contain :src="logo" height="700px"/>
             </v-flex>
-            <v-flex xs8>
+            <v-flex lg7>
                     <h1 class="text-xs-center brandTitle">DoWhileLoops</h1>
                     <h3 class="text-xs-center brandTitle">This is a catchy tagline.</h3>
                 <material-card
@@ -35,7 +28,7 @@
                         :show-arrows-on-hover="false"
                         :next-icon="false"
                         :prev-icon="false"
-                        :height="250"
+                        :height="300"
                         :interval="8000"
                         
                         class="elevation-0">
@@ -96,7 +89,8 @@ export default {
         filter: "Refresh",
         totalRows: [],
         reversedRows: [],
-        responsive: false
+        responsive: false,
+        logo: require('../assets/DoWhileLogo.svg')
         }
     },
     methods: {
@@ -105,14 +99,6 @@ export default {
               this.responsive = true
             } else {
               this.responsive = false
-            }
-    },
-        getShownRows (chosenFilter) {
-            this.filter = chosenFilter
-            if (chosenFilter === 'Refresh') {
-                
-            } else {
-                this.shownRows = this.totalRows.filter(row => row['source'] === this.filters[this.filterButtons.indexOf(chosenFilter)]).slice(0, 4)
             }
         }
     },
