@@ -9,7 +9,7 @@ export default {
   warning: '#ffa21a',
   darkIcon: '#495057',
   splash: '#2c84f6',
-  $bgPrimary: '#37474f',
-  $bgLight: '#62727b',
-  $bgDark: '#102027'
+  bgPrimary: '#37474f',
+  bgLight: '#62727b',
+  bgDark: '#102027'
 }

@@ -11,10 +11,10 @@
         </v-layout>
 
         <v-layout v-else row wrap align-center mt-1>
-            <v-flex lg5>    
-                <v-img contain :src="logo" height="700px"/>
+            <v-flex md5 lg5>    
+                <v-img contain :src="logo" height="615px"/>
             </v-flex>
-            <v-flex lg7>
+            <v-flex md7 lg7>
                     <h1 class="text-xs-center brandTitle">DoWhileLoops</h1>
                     <h3 class="text-xs-center brandTitle">This is a catchy tagline.</h3>
                 <material-card

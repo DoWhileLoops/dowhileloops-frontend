@@ -76,6 +76,18 @@
       }
     }
   }
+  .responsiveNavText, .responsiveNavBrand{
+    font-size: $font-size-h4;
+    font-weight: $font-weight-base;
+    color: #f5f5f5;
+  }
+
+  .responsiveNavBrand{
+    font-size: $font-size-h4;
+    font-weight: $font-weight-base;
+    color: #f5f5f5;
+    width:40px;
+  }
 }
 
 @media all and (max-width: 550px) {
