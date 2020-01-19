@@ -34,7 +34,7 @@ export default {
     name: 'NotFound',
     methods: {
         bringItOnHome () {
-            this.$router.push({ name:  'Home'})
+            this.$router.push({ name: 'Home'})
         }
     }
 }
