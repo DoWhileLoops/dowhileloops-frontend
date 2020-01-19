@@ -72,7 +72,7 @@ export default [
   },
   {
     path: '*',
-    name: 'I\'m sorry, Dave.',
+    name: '404, buddy.',
     view: 'NotFound'
   }
 ]
