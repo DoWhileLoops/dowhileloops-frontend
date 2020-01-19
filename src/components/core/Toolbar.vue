@@ -115,9 +115,6 @@ export default {
     onClickBtn () {
       this.setDrawer(!this.$store.state.app.drawer)
     },
-    onClick () {
-      //
-    },
     onResponsiveInverted () {
       if (window.innerWidth < 991) {
         this.responsive = true
