@@ -2,12 +2,40 @@
 <template>
     <v-container fill-height fluid grid-list-xl>
         <v-layout v-if="responsive" row wrap align-center>
-            <material-card class="splashCard">
-                
-                <v-card-text class="text-xs-center">
-                    STUFF HERE
-                </v-card-text>
-                </material-card>
+            <v-flex xs12>
+                <h3 class="text-xs-center">This is a catchy tagline.</h3>
+                <v-carousel
+                        :hide-delimiters="true"
+                        :show-arrows="false"
+                        :show-arrows-on-hover="false"
+                        :next-icon="false"
+                        :prev-icon="false"
+                        :height="300"
+                        :interval="8000"
+                        :cycle="true"
+                        class="elevation-0">
+                            <v-carousel-item
+                            v-for="(row, index) in totalRows"
+                            :key="row.uid"
+                            v-bind="row"
+                            >
+                                <v-layout row>
+                                    <v-flex xs12>
+                                    <material-content-card
+                                            v-bind:rowData="row"
+                                            xs6
+                                            >
+                                                <h4 class="title font-weight-light">{{ row.title }}</h4>
+                                                <p class="category d-inline-flex font-weight-light">
+                                                {{ row.shortDescription }}
+                                                </p>
+                                            </material-content-card>
+                                    </v-flex>
+                                </v-layout>                            
+                            </v-carousel-item>
+                        </v-carousel>
+            </v-flex>
+            
         </v-layout>
 
         <v-layout v-else row wrap align-center mt-1>
@@ -15,8 +43,8 @@
                 <v-img contain :src="logo" height="615px"/>
             </v-flex>
             <v-flex md7 lg7>
-                    <h1 class="text-xs-center brandTitle">DoWhileLoops</h1>
-                    <h3 class="text-xs-center brandTitle">This is a catchy tagline.</h3>
+                    <h1 class="text-xs-center">DoWhileLoops</h1>
+                    <h3 class="text-xs-center">This is a catchy tagline.</h3>
                 <material-card
                     class="carouselCard"
                     >
@@ -30,7 +58,6 @@
                         :prev-icon="false"
                         :height="300"
                         :interval="8000"
-                        
                         class="elevation-0">
                             <v-carousel-item
                             v-for="(row, index) in totalRows"
