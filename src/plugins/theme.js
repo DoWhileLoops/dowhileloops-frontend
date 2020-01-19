@@ -7,5 +7,9 @@ export default {
   info: '#173F67',
   success: '#5cb860',
   warning: '#ffa21a',
-  darkIcon: '#495057'
+  darkIcon: '#495057',
+  splash: '#2c84f6',
+  $bgPrimary: '#37474f',
+  $bgLight: '#62727b',
+  $bgDark: '#102027'
 }
