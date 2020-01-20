@@ -39,13 +39,11 @@ export default {
             await this.$store.dispatch('fetchSingleBlog', payload)
         }
 
-        if(typeof this.$store.getters.getSingleBlog(payload) !== 'undefined'){
-            this.story = this.$store.getters.getSingleBlog(payload).story;
-            // console.log(this.story)
-        }else{
-            this.$router.push({name:'NotFound'}) 
+        if (typeof this.$store.getters.getSingleBlog(payload) !== 'undefined') {
+            this.story = this.$store.getters.getSingleBlog(payload).story
+        } else {
+            this.$router.push({name: '404, buddy.'}) 
         }
-
     }
 }
 </script>
