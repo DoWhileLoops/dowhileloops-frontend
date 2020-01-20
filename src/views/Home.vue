@@ -56,8 +56,9 @@
                         :show-arrows-on-hover="false"
                         :next-icon="false"
                         :prev-icon="false"
-                        :height="300"
+                        :height="350"
                         :interval="8000"
+                        
                         class="elevation-0">
                             <v-carousel-item
                             v-for="(row, index) in totalRows"

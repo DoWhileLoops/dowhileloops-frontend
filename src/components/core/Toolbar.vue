@@ -15,9 +15,15 @@
               icon
               @click.stop="onClickBtn"
             >
-            <v-icon color="info">mdi-menu</v-icon>
+            <v-icon color="#2c84f6">mdi-menu</v-icon>
             </v-btn> 
-            <span class="responsiveNavText">
+            <!-- back to blogs right here -->
+            <span v-if="headingContent == 'SingleBlog'" class="responsiveNavText" v-on:click="backToPageManually('Blog')">
+              <v-icon color="#2c84f6">mdi-skip-backward</v-icon>
+              Back To All Blogs
+            </span>
+
+            <span v-else class="responsiveNavText">
               {{ headingContent }}
               </span>
           </v-toolbar-title>
@@ -124,6 +130,9 @@ export default {
     },
     onNavBtnClick (link) {
       this.$router.push({ name: link.text })      
+    },
+    backToPageManually (path) {
+      this.$router.push({ name: path })      
     }
   }
 }

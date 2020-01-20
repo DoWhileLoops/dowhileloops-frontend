@@ -18,23 +18,23 @@
               sm12
               md9
               >
-                <h4 class="mt-4">
+                <h3 class="mt-4">
                   I'm Chris Clemons, a .NET developer based in Seattle. 
-                </h4>
-                <h4 class="mt-4">
+                </h3>
+                <h3 class="mt-4">
                   I've been programming professionally since 2016, and obsessed with music since I found out I had ears.
-                </h4>
-                <h4 class="mt-4">
+                </h3>
+                <h3 class="mt-4">
                   DoWhileLoops is meant to showcase work that I have done in both fields, as well as posts for fellow enthusiasts.
-                </h4>
-                <h4 class="mt-4">
+                </h3>
+                <h3 class="mt-4">
                   Feel free to reach out at
                   <a href="mailto:dowhile@dowhileloops.com" class="bioLink">dowhile@dowhileloops.com</a>
                   or
                   <a href="https://www.linkedin.com/in/christopher-clemons-53839b107" target="_blank" class="bioLink">
                     LinkedIn.
                   </a>
-                </h4>
+                </h3>
                 <div class="text-xs-center mt-4">
                   <v-btn
                     color="splash"
@@ -153,10 +153,9 @@ export default {
 </script>
 
 <style>
-/* .jobTitle{
-  /* background-color: green;
-  font-weight: bold;
-} */
+.jobTitle{
+  font-weight: bold !important;
+}
 .sectionHeader{
   text-decoration:underline;
 }
