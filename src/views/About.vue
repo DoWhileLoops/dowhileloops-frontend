@@ -163,7 +163,6 @@ export default {
   font-style: italic;
 }
 .liResume{
-  /* font-size: 18px; */
   color: #f5f5f5;
 }
 .bioLink{
