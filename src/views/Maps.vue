@@ -18,6 +18,7 @@
 </template>
 
 <style>
+/* test check-in */
 .mapouter {
   text-align:right;
   height:100%;
