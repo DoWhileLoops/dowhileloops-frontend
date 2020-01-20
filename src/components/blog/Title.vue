@@ -9,7 +9,7 @@
 
 <style>
 .blogTitleText{
-  color: #2c84f6 !important; 
+  /* color: #2c84f6 !important;  */
 }
 .blogTitle{
   background-color: #102027 !important;

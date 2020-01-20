@@ -8,14 +8,18 @@
 
 <script>
 import Title from './Title'
-import Paragraph from './Paragraph'
 import BlogImage from './BlogImage'
+import RichParagraph from './RichParagraph'
+import Paragraph from './Paragraph'
+import Footnote from './Footnote'
 export default {
   name: 'Page',
   components: {
     Title,
+    BlogImage,
+    RichParagraph,
     Paragraph,
-    BlogImage
+    Footnote
   },
   props: ['blok']
 }
