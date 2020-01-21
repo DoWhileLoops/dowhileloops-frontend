@@ -71,6 +71,11 @@ export default [
     view: 'Upgrade'
   },
   {
+    path: '/404',
+    name: '404, buddy.',
+    view: 'NotFound'
+  },
+  {
     path: '*',
     name: '404, buddy.',
     view: 'NotFound'
