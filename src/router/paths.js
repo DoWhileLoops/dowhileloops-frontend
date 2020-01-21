@@ -10,6 +10,11 @@ export default [
     view: 'Home'
   },
   {
+    path: '/home',
+    name: 'Home',
+    view: 'Home'
+  },
+  {
     path: '/dashboard',
     // Relative to /src/views
     view: 'Dashboard'

@@ -5,6 +5,10 @@
 
   background-color: $bg-dark !important;
 
+  .activeLink {
+    background-color: $splash-color !important;
+  }
+  
   .v-list {
     background: $sidebar-bg;
     padding: 0;

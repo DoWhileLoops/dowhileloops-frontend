@@ -42,11 +42,15 @@
         <v-flex 
           xs6 md3 lg3 
           v-for="(link, i) in links" 
-          :key="link.text" class="nav-btn"
-          v-on:click="onNavBtnClick(link)">
-        <h4>
-            {{ link.text }}
-        </h4>  
+          :key="link.text" class="nav-btn">
+        <router-link
+            :to="link.text"
+            v-slot="{ href, route, navigate, isActive, isExactActive }"
+          >
+            <NavLink :active="isActive" :href="href" @click="navigate"
+              >{{ link.text}}</NavLink
+            >
+          </router-link>
         </v-flex>        
       </v-layout>
   </div>
@@ -68,27 +72,32 @@ export default {
       {
         to: '/',
         icon: 'mdi-home',
-        text: 'Home'
+        text: 'Home',
+        active: false
       },
       {
         to: '/tech',
         icon: 'mdi-code-brackets',
-        text: 'Tech'
+        text: 'Tech',
+        active: false
       },
       {
         to: '/tunes',
         icon: 'mdi-music',
-        text: 'Tunes'
+        text: 'Tunes',
+        active: false
       },
       {
         to: '/blog',
         icon: 'mdi-lead-pencil',
-        text: 'Blog'
+        text: 'Blog',
+        active: false
       },
       {
         to: '/about',
         icon: 'mdi-account',
-        text: 'About'
+        text: 'About',
+        active: false
       }
     ]
   }),
