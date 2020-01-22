@@ -14,10 +14,9 @@
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                The stacked victories in the wake of learning the things.
+                The repos.
             </div>
           </div>
-
           <v-card-text>
             <v-layout
               row
@@ -65,8 +64,7 @@ export default {
         }
         
         this.rows = this.$store.getters.getAllRows.filter(x => x.source == 'GitHub');
-        console.log(this.rows);
-        
+        console.log(this.rows)
     }
 }
 </script>

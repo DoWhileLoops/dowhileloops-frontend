@@ -3,7 +3,7 @@
     <v-container fill-height fluid grid-list-xl>
         <v-layout v-if="responsive" row wrap align-center>
             <v-flex xs12>
-                <h3 class="text-xs-center">This is a catchy tagline.</h3>
+                <h3 class="text-xs-center">Repos, rhythm, and rambling. All day.</h3>
                 <v-carousel
                         :hide-delimiters="true"
                         :show-arrows="false"
@@ -38,13 +38,13 @@
             
         </v-layout>
 
-        <v-layout v-else row wrap align-center mt-1>
+        <v-layout v-else row wrap align-center mt-5>
             <v-flex md5 lg5>    
                 <v-img contain :src="logo" height="615px"/>
             </v-flex>
             <v-flex md7 lg7>
                     <h1 class="text-xs-center">DoWhileLoops</h1>
-                    <h3 class="text-xs-center">This is a catchy tagline.</h3>
+                    <h3 class="text-xs-center">Repos, rhythm, and rambling. All day.</h3>
                 <material-card
                     class="carouselCard"
                     >

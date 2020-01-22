@@ -14,7 +14,7 @@
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                Ramblings on various topics.
+                May these scribblings be of use to you.
             </div>
           </div>
 
