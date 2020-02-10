@@ -10,6 +10,7 @@
 import Title from './Title'
 import BlogImage from './BlogImage'
 import RichParagraph from './RichParagraph'
+import SectionTitle from './SectionTitle'
 import Paragraph from './Paragraph'
 import Footnote from './Footnote'
 export default {
@@ -18,6 +19,7 @@ export default {
     Title,
     BlogImage,
     RichParagraph,
+    SectionTitle,
     Paragraph,
     Footnote
   },
