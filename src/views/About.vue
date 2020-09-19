@@ -169,7 +169,7 @@ export default {
   color: #2c84f6 !important;
 }
 .bioCard{
-  background-color: #62727b !important;
+  background-color:#102027 !important;
 }
 .bioBtn{
   height:75px;

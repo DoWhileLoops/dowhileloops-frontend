@@ -9,7 +9,7 @@
     >
       <v-flex xs12>
         <material-card
-          color="#62727b">
+          color="#102027">
           <div
             slot="header"
           >

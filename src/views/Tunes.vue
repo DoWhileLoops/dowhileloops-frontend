@@ -9,56 +9,55 @@
     >
       <v-flex xs12>
         <material-card
-          color="#62727b">
+          color="#102027">
           <div
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                The aggregated results of a mostly healthy fascination with music.
+                The mostly instrumental The Aggregation, available on Spotify now.
             </div>
           </div>
-
           <v-card-text>
             <v-layout
+             v-if="responsive"
             row
             wrap>
+            <v-flex 
+              sm6
+              xs12
+              md6
+              lg6 
+              >
+                  <iframe src="https://open.spotify.com/embed/album/2xfpQQlroOCR1zjlFeke07" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              </v-flex>
             <v-flex sm6
             xs12
             md6
             lg6 
              >
-                <iframe width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/590946879&color=%23091826&auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=false&show_teaser=true&visual=false"></iframe>
-            </v-flex>
-            <v-flex sm6
-            xs12
-            md6
-            lg6 
-             >
-                <iframe src="https://open.spotify.com/embed/playlist/676IRGFDzNZRikFy2ZjZ8D" width="100%" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <v-img  contain :src="aggregation" height="300px"/>
             </v-flex>
             </v-layout>
-            <hr>
             <v-layout
-              row
-              wrap>
-              <v-flex sm6
-                xs12
-                md6
-                lg3 
-                v-for="row in rows" 
-                v-bind:key="row.uid" 
-                v-bind="row">
-                 <material-content-card
-                      color="info"
-                      type="Line"
-                      v-bind:rowData="row"
-                    >
-                    <h4 class="title font-weight-light">{{row.title}}</h4>
-                    <p class="category d-inline-flex font-weight-light">
-                      {{ row.shortDescription }}
-                    </p>
-                </material-content-card>
+             v-else
+            row
+            wrap>
+            <v-flex
+            
+            xs12
+            md6
+            lg6 
+             >
+              <v-img contain :src="aggregation" height="500px"/>
             </v-flex>
+              <v-flex 
+              
+              xs12
+              md6
+              lg6 
+              >
+                  <iframe src="https://open.spotify.com/embed/album/2xfpQQlroOCR1zjlFeke07" width="80%" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              </v-flex>
             </v-layout>
           </v-card-text>
         </material-card>
@@ -71,9 +70,27 @@
 import { mapGetters, mapMutations } from 'vuex'
 export default {
     name: 'Tech',
+    mounted () {
+        this.onResponsiveInverted()
+        window.addEventListener('resize', this.onResponsiveInverted)
+        },
+        beforeDestroy () {
+        window.removeEventListener('resize', this.onResponsiveInverted)
+    },
     data: function () {
         return {
-            rows: []
+            rows: [],
+            aggregation: require('../assets/Aggregation.svg'),
+            responsive: false
+        }
+    },
+    methods: {
+        onResponsiveInverted () {
+            if (window.innerWidth < 780) {
+              this.responsive = true
+            } else {
+              this.responsive = false
+            }
         }
     },
     async created () {
