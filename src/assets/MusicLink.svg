@@ -1,0 +1,16 @@
+<svg id="Component_12_1" data-name="Component 12 – 1" xmlns="http://www.w3.org/2000/svg" width="146" height="200" viewBox="0 0 146 200">
+  <g id="Component_3_1" data-name="Component 3 – 1" transform="translate(5.474 63.351)">
+    <line id="Line_3" data-name="Line 3" x2="132.724" y2="3" transform="matrix(1, -0.017, 0.017, 1, 1.528, 89.866)" fill="none" stroke="#271e1e" stroke-width="11"/>
+    <line id="Line_4" data-name="Line 4" x2="132.724" y2="3" transform="matrix(1, -0.017, 0.017, 1, 2.019, 60.683)" fill="none" stroke="#271e1e" stroke-width="11"/>
+    <line id="Line_5" data-name="Line 5" x2="132.724" y2="3" transform="matrix(1, -0.017, 0.017, 1, 0.509, 31.5)" fill="none" stroke="#271e1e" stroke-width="11"/>
+    <line id="Line_6" data-name="Line 6" x2="132.724" y2="3" transform="matrix(1, -0.017, 0.017, 1, 0, 2.316)" fill="none" stroke="#271e1e" stroke-width="11"/>
+    <line id="Line_7" data-name="Line 7" x2="132.724" y2="3" transform="matrix(1, -0.017, 0.017, 1, 2.038, 119.049)" fill="none" stroke="#271e1e" stroke-width="11"/>
+    <line id="Line_8" data-name="Line 8" x1="0.47" y2="52.444" transform="translate(62.026 49.705)" fill="none" stroke="#2c84f6" stroke-width="5.5"/>
+    <path id="Path_44" data-name="Path 44" d="M13.2.028c7.4.382,13.5,4.559,13.612,9.331s-5.792,8.33-13.194,7.948S.117,12.747,0,7.976,5.793-.354,13.2.028Z" transform="matrix(-0.914, 0.407, -0.407, -0.914, 88.558, 48.705)" fill="#2c84f6"/>
+    <text id="_" data-name="#" transform="matrix(0.978, -0.208, 0.208, 0.978, 42.526, 59.649)" fill="#2c84f6" font-size="28" font-family="SegoeUI-BoldItalic, Segoe UI" font-weight="700" font-style="italic"><tspan x="0" y="0">#</tspan></text>
+  </g>
+  <g id="Rectangle_6" data-name="Rectangle 6" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+    <rect width="146" height="200" stroke="none"/>
+    <rect x="0.5" y="0.5" width="145" height="199" fill="none"/>
+  </g>
+</svg>

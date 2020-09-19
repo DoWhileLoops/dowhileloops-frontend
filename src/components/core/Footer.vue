@@ -42,7 +42,7 @@ export default {
       { name: 'Home', Link: '/#', Icon: 'mdi-home' },
       { name: 'LinkedIn', Link: 'https://www.linkedin.com/in/christopher-clemons-53839b107', Icon: 'mdi-linkedin-box' },
       { name: 'GitHub', Link: 'https://github.com/dowhileloops', Icon: 'mdi-github-circle' },
-      { name: 'Soundcloud', Link: 'https://soundcloud.com/dowhileloops', Icon: 'mdi-soundcloud' }
+      { name: 'Soundcloud', Link: 'https://open.spotify.com/artist/4dfVsaqVgf5u6q660xAGoj?si=KC_3FamWQZ2ZdSA79nBoZQ', Icon: 'mdi-spotify' }
     ]
   }),
   mounted () {

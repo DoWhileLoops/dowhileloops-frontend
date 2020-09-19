@@ -3,96 +3,48 @@
     <v-container fill-height fluid grid-list-xl>
         <v-layout v-if="responsive" row wrap align-center>
             <v-flex xs12>
-                <h3 class="text-xs-center">Repos, rhythm, and rambling. All day.</h3>
-                <v-carousel
-                        :hide-delimiters="true"
-                        :show-arrows="false"
-                        :show-arrows-on-hover="false"
-                        :next-icon="false"
-                        :prev-icon="false"
-                        :height="300"
-                        :interval="8000"
-                        :cycle="true"
-                        class="elevation-0">
-                            <v-carousel-item
-                            v-for="(row, index) in totalRows"
-                            :key="row.uid"
-                            v-bind="row"
-                            >
-                                <v-layout row>
-                                    <v-flex xs12>
-                                    <material-content-card
-                                            v-bind:rowData="row"
-                                            xs6
-                                            >
-                                                <h4 class="title font-weight-light">{{ row.title }}</h4>
-                                                <p class="category d-inline-flex font-weight-light">
-                                                {{ row.shortDescription }}
-                                                </p>
-                                            </material-content-card>
-                                    </v-flex>
-                                </v-layout>                            
-                            </v-carousel-item>
-                        </v-carousel>
+                <h3 class="text-xs-center">I'm Chris Clemons. I type code and write music.</h3>
+                    <h3 class="text-xs-center">Can play C# in both.</h3>
             </v-flex>
-            
+            <v-flex xs12>
+                <router-link to='tech'>
+                            <NavLink :active="isActive" :href="href">
+                                    <v-img class="contentLink" contain :src="bracketLink" height="200px"/>
+                            </NavLink>
+                        </router-link>
+            </v-flex>
+            <v-flex xs12>
+                <router-link to='tunes'>
+                            <NavLink :active="isActive" :href="href">
+                                    <v-img class="contentLink" contain :src="musicLink" height="200px"/>
+                            </NavLink>
+                        </router-link>
+            </v-flex>
         </v-layout>
-
         <v-layout v-else row wrap align-center mt-5>
             <v-flex md5 lg5>    
                 <v-img contain :src="logo" height="615px"/>
             </v-flex>
             <v-flex md7 lg7>
-                    <h1 class="text-xs-center">DoWhileLoops</h1>
-                    <h3 class="text-xs-center">Repos, rhythm, and rambling. All day.</h3>
-                <material-card
-                    class="carouselCard"
-                    >
-                    <!-- https://vuetifyjs.com/en/components/carousels -->
-                    <v-layout row>
-                        <v-carousel
-                        :hide-delimiters="true"
-                        :show-arrows="false"
-                        :show-arrows-on-hover="false"
-                        :next-icon="false"
-                        :prev-icon="false"
-                        :height="350"
-                        :interval="8000"
-                        
-                        class="elevation-0">
-                            <v-carousel-item
-                            v-for="(row, index) in totalRows"
-                            :key="row.uid"
-                            v-bind="row"
-                            >
-                                <v-layout row>
-                                    <v-flex xs6>
-                                    <material-content-card
-                                            v-bind:rowData="row"
-                                            xs6
-                                            >
-                                                <h4 class="title font-weight-light">{{ row.title }}</h4>
-                                                <p class="category d-inline-flex font-weight-light">
-                                                {{ row.shortDescription }}
-                                                </p>
-                                            </material-content-card>
-                                    </v-flex>
-                                    <v-flex xs6>
-                                        <material-content-card
-                                        v-bind:rowData="reversedRows[index]"
-                                        xs6
-                                        >
-                                            <h4 class="title font-weight-light">{{ reversedRows[index].title }}</h4>
-                                            <p class="category d-inline-flex font-weight-light">
-                                            {{ reversedRows[index].shortDescription }}
-                                            </p>
-                                        </material-content-card>
-                                    </v-flex>
-                                </v-layout>                            
-                            </v-carousel-item>
-                        </v-carousel>
-                        </v-layout>
-                </material-card>
+                <h1 class="text-xs-center">DoWhileLoops</h1>
+                <h3 class="text-xs-center">I'm Chris Clemons. I type code and write music.</h3>
+                <h3 class="text-xs-center">Can play C# in both.</h3>
+                <v-layout row>
+                    <v-flex xs6>
+                        <router-link to='tech'>
+                            <NavLink :active="isActive" :href="href">
+                                    <v-img class="contentLink" contain :src="bracketLink" height="315px"/>
+                            </NavLink>
+                        </router-link>
+                    </v-flex>   
+                    <v-flex xs6>
+                        <router-link to='tunes'>
+                            <NavLink :active="isActive" :href="href">
+                                    <v-img class="contentLink" contain :src="musicLink" height="315px"/>
+                            </NavLink>
+                        </router-link>
+                    </v-flex>   
+                </v-layout> 
             </v-flex>
         </v-layout>        
     </v-container>
@@ -118,7 +70,9 @@ export default {
         totalRows: [],
         reversedRows: [],
         responsive: false,
-        logo: require('../assets/DoWhileLogo.svg')
+        logo: require('../assets/DoWhileLogo.svg'),
+        bracketLink: require('../assets/BracketLink.svg'),
+        musicLink: require('../assets/MusicLink.svg')
         }
     },
     methods: {
@@ -143,3 +97,20 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    .contentLink:hover {
+      cursor: pointer;
+       box-shadow: 0 10px 10px -9px #2c84f6, 0 10px 10px -9px  #2c84f6 !important;
+    }
+  #app-drawer {
+    .v-list__tile {
+      border-radius: 4px;
+
+      &--buy {
+        margin-top: auto;
+        margin-bottom: 17px;
+      }
+    }
+  }
+</style>

@@ -16,8 +16,7 @@
         column
       >
         <v-list-tile avatar>
-          <v-list-tile-avatar mt-4
-          >
+          <v-list-tile-avatar mt-4>
             <v-img contain :src="logo" height="90px" width="90px"/>
           </v-list-tile-avatar>
 
