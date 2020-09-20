@@ -9,12 +9,12 @@
     >
       <v-flex xs12>
         <material-card
-          color="#102027">
+          color="#271e1e">
           <div
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                The mostly instrumental The Aggregation, available on Spotify now.
+                Please enjoy The Aggregation, now streaming on Spotify.
             </div>
           </div>
           <v-card-text>

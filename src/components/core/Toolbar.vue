@@ -53,7 +53,7 @@
           </router-link>
         </v-flex>        
       </v-layout>
-  </div>
+    </div>    
     
   </v-toolbar>
 </template>

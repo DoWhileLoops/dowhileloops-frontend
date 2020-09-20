@@ -9,15 +9,14 @@
     >
       <v-flex xs12>
         <material-card
-          color="#102027">
+          color="#271e1e">
           <div
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                May these scribblings be of use to you.
+                Here are some tips and tricks I've learned along the way.
             </div>
           </div>
-
           <v-card-text>
             <v-layout
               row

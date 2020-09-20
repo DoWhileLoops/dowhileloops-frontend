@@ -8,7 +8,7 @@
       align-center
     >
       <v-flex xs12>
-        <material-card color="bgLight" class="bioCard">            
+        <material-card color="#271e1e" class="bioCard">            
             <v-card-text class="text-xs-center">
               <v-layout 
                 row
@@ -22,7 +22,7 @@
                   I'm Chris Clemons, a .NET developer based in Seattle. 
                 </h3>
                 <h4 class="mt-4">
-                  I've been programming professionally since 2016, and obsessed with music since I found out I had ears.
+                  I've been programming professionally since 2016, and making music since I can remember.
                 </h4>
                 <h4 class="mt-4">
                   DoWhileLoops is meant to showcase work that I have done in both fields, as well as posts for fellow enthusiasts.
@@ -30,10 +30,9 @@
                 <h4 class="mt-4">
                   Feel free to reach out at
                   <a href="mailto:dowhile@dowhileloops.com" class="bioLink">dowhile@dowhileloops.com</a>
-                  or
+                  or via 
                   <a href="https://www.linkedin.com/in/christopher-clemons-53839b107" target="_blank" class="bioLink">
-                    LinkedIn
-                  </a>.
+                    LinkedIn</a>!
                 </h4>
                 <div class="text-xs-center mt-4">
                   <v-btn
@@ -79,12 +78,22 @@
               <p>Seattle, WA &mdash; dowhile@dowhileloops.com</p>
               </v-flex>
               </v-layout>
-            <p class="italics">Technology professional with over three years of full stack experience, including C#, JavaScript, SQL, and Azure Cloud Services. 
+            <p class="italics">Technology professional with over four years of full stack experience, including C#, Azure Cloud Services, SQL, and JavaScript. 
               Proven ability to lead development efforts on custom projects for large clients.</p>
             <h3 class="sectionHeader">Experience</h3>
-            <h4 class="jobTitle">Systems Support Engineer, eventcore</h4>
-            <p class="jobInfo">September 2018 &ndash; Present</p>
+
+
+            <h4 class="jobTitle">Systems Support Engineer II, eventcore</h4>
+            <p class="jobInfo">July 2020 &ndash; Present</p>
             <p class="jobDescription italics">eventcore is a ~75 employee firm building customized event registration and meeting management solutions.</p>
+            <ul>
+              <li class="liResume">Entrusted with a higher level of responsibility within the company's database and infrastructure.</li>
+              <li class="liResume">Scoped, designed, implemented, and maintained a system that pushes registrant data in real time to a client’s marketing endpoint. This system is integrated across all of our preexisting infrastructure, and is primarily built using Azure Durable Functions, a microservice architecture.</li>
+              <li class="liResume">Currently working closely with a new partner, designing and implementing an integration between our two data stores. This will allow both admin and end users to create, edit, and consume event content seamlessly between both platforms.</li>
+              <li class="liResume">Resolve technical issues around the clock during large virtual events with over 300K users.</li>
+            </ul>
+            <h4 class="jobTitle">Systems Support Engineer I, eventcore</h4>
+            <p class="jobInfo">September 2018 &ndash; July 2020</p>
             <ul>
               <li class="liResume">Chosen as one of the first three engineers to spearhead a new live engineering team, tasked with triaging and solving complex and emergent problems in the production environment.</li>
               <li class="liResume">Implement new services and optimize existing infrastructure within Azure, leading to an increase in app performance and reduction in workload for less experienced teams. This included migrating the existing Azure B2C setup from too many WYSIWYG policies  into a fully generic and custom Identity Experience Framework solution.</li>
@@ -169,7 +178,7 @@ export default {
   color: #2c84f6 !important;
 }
 .bioCard{
-  background-color:#102027 !important;
+  background-color:#271e1e !important;
 }
 .bioBtn{
   height:75px;

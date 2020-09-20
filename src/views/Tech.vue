@@ -9,12 +9,12 @@
     >
       <v-flex xs12>
         <material-card
-          color="#102027">
+          color="#271e1e">
           <div
             slot="header"
           >
             <div class="title font-weight-light mb-2">
-                The repos.
+                These are my current Git repos. Let me know if you find any bugs.
             </div>
           </div>
           <v-card-text>

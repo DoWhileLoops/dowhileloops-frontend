@@ -11,5 +11,6 @@ export default {
   splash: '#2c84f6',
   bgPrimary: '#37474f',
   bgLight: '#62727b',
-  bgDark: '#102027'
+  //bgDark: '#102027'
+  bgDark: '#271e1e'
 }
