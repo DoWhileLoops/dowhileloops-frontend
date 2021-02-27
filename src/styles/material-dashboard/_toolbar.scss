@@ -1,10 +1,17 @@
 @import "./colors";
 
+.v-toolbar.responsive{
+  //min-height: 1500px !important;
+}
+
 .v-toolbar {
-  background-color: $bg-dark !important;
+  //background-color: $bg-primary !important;
+  background: rgba(0, 0, 0, 0) !important; 
   min-height: $toolbar-min-height;
   border-radius: $border-radius-base;
   margin-bottom: $margin-general;
+  
+  //background-color: rgba(0,0,0,0.5) !important; //opacity hack
 
   @include toolbar-colors('bg-danger', $brand-danger);
   @include toolbar-colors('bg-warning', $brand-warning);
@@ -23,8 +30,11 @@
 
   .v-toolbar__content {
     min-height: $toolbar-min-height;
+    
     padding-bottom: $padding-small;
     padding-top: $padding-small;
+    
+    
 
     .nav-btn {
       font-size: $font-size-h4;
@@ -34,7 +44,9 @@
     
     .nav-outerdiv{
       width:100%;
-      text-align:center
+      text-align:center;
+      //background-color: $black;
+      //background-color: rgba(0,0,0,0.5); //opacity hack
     }
 
     .nav-btn:hover {
@@ -93,9 +105,9 @@
     cursor: default;
   }
 
-  .responsiveHamburger{
-    cursor: pointer;
-  }
+  // .responsiveHamburger{
+  //   cursor: pointer;
+  // }
 
   .responsiveNavBrand{
     cursor: pointer;

@@ -4,9 +4,14 @@
   @include shadow-big();
 
   background-color: $bg-dark !important;
+  font-family: $font-family-sans-serif !important;
 
   .activeLink {
     background-color: $splash-color !important;
+  }
+  .drawerTitle{
+    font-size: 34px !important;
+    font-weight: $font-weight-boldest !important;
   }
   
   .v-list {
@@ -32,7 +37,9 @@
         }
 
         .v-list__tile__title {
-          font-size: $font-size-default !important;
+          //font-size: $font-size-default !important;
+          
+          font-size: $font-size-h3 !important;
           font-weight: $font-weight-base;
           padding: 0;
         }

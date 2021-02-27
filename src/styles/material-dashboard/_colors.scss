@@ -326,7 +326,12 @@ $white: #ffffff; $rgb-white: "255,255,255" !default;
 
 // material.io color scheme:
 //https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=455A64
-$bg-primary: #37474f !default;
+// $bg-primary: #37474f !default;
+// $bg-light: #62727b !default;
+// $bg-dark:#271e1e !default;
+// $splash-color: #2c84f6 !default;
+
+$bg-primary: #000000 !default;
 $bg-light: #62727b !default;
 $bg-dark:#271e1e !default;
 $splash-color: #2c84f6 !default;

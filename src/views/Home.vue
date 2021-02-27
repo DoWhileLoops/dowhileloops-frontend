@@ -1,53 +1,68 @@
 /* eslint-disable */
+
 <template>
-    <v-container fill-height fluid grid-list-xl>
-        <v-layout v-if="responsive" row wrap align-center>
-            <v-flex xs12>
-                <h3 class="text-xs-center">I'm Chris Clemons. I type code and write music.</h3>
-                    <h3 class="text-xs-center">Can play C# in both.</h3>
-            </v-flex>
-            <v-flex xs12>
-                <router-link to='tech'>
-                            <NavLink :active="isActive" :href="href">
-                                    <v-img class="contentLink" contain :src="bracketLink" height="200px"/>
-                            </NavLink>
-                        </router-link>
-            </v-flex>
-            <v-flex xs12>
-                <router-link to='tunes'>
-                            <NavLink :active="isActive" :href="href">
-                                    <v-img class="contentLink" contain :src="musicLink" height="200px"/>
-                            </NavLink>
-                        </router-link>
-            </v-flex>
-        </v-layout>
-        <v-layout v-else row wrap align-center mt-5>
-            <v-flex md5 lg5>    
-                <v-img contain :src="logo" height="615px"/>
-            </v-flex>
-            <v-flex md7 lg7>
-                <h1 class="text-xs-center">DoWhileLoops</h1>
-                <h3 class="text-xs-center">I'm Chris Clemons. I type code and write music.</h3>
-                <h3 class="text-xs-center">Can play C# in both.</h3>
-                <v-layout row>
-                    <v-flex xs6>
-                        <router-link to='tech'>
-                            <NavLink :active="isActive" :href="href">
-                                    <v-img class="contentLink" contain :src="bracketLink" height="315px"/>
-                            </NavLink>
-                        </router-link>
-                    </v-flex>   
-                    <v-flex xs6>
-                        <router-link to='tunes'>
-                            <NavLink :active="isActive" :href="href">
-                                    <v-img class="contentLink" contain :src="musicLink" height="315px"/>
-                            </NavLink>
-                        </router-link>
-                    </v-flex>   
-                </v-layout> 
-            </v-flex>
-        </v-layout>        
-    </v-container>
+
+    <v-container v-if="tinyresponsive" fill-height fill-width fluid grid-list-xl class="tinyResponsiveContainer">
+            <v-layout row wrap align-center justify-center class="tinyResponsiveLayout">
+                <v-flex xs12 s12 md12 class="imgFlexSplashTinyResponsive">
+                <v-img contain :src="dwlSplash" class="imgSplashTinyResponsive" >
+                    </v-img> 
+                </v-flex>
+                      <v-flex xs12 s12 md12 class="splashFlexTinyResponsive">
+                        <h2 class="main tinyResponsiveLogo">DoWhileLoops</h2>
+                        <h3 class="">Music you very well may enjoy.</h3>
+                        <v-btn
+                            color="splash"
+                            round
+                            class="font-weight-light bioBtnResponsive"
+                            @click.stop="onClickBtn"
+                        >
+                            <h3>Listen Here</h3>
+                        </v-btn>
+                    </v-flex> 
+            </v-layout>    
+        </v-container>
+    
+        <v-container v-else-if="responsive" fill-height fluid grid-list-xl class="responsiveContainer">
+            <v-layout row wrap align-center justify-center class="responsiveLayout">
+                <v-flex xs12 s12 md12 class="imgFlexSplashResponsive">
+                <v-img contain :src="dwlSplash" class="imgSplashResponsive" >
+                    </v-img> 
+                </v-flex>
+
+                <v-flex xs12 s12 md12 class="splashFlexResponsive">
+                    <h2 class="main responsiveLogo">DoWhileLoops</h2>
+                    <h3 class="">Music you very well may enjoy.</h3>
+                    <v-btn
+                        color="splash"
+                        round
+                        class="font-weight-light bioBtnResponsive"
+                        @click.stop="onClickBtn"
+                    >
+                        <h3>Listen Here</h3>
+                    </v-btn>
+                </v-flex> 
+            </v-layout>                               
+        </v-container>
+
+        <v-container v-else fill-height fluid grid-list-xl text-xs-center class="nonResponsiveContainer">
+            <v-img :src="dwlSplash" class="imgSplashFull" >
+                <v-layout row wrap align-center>
+                    <v-flex md7 lg7 class="splashFlex">
+                        <h1 class="main logo">DoWhileLoops</h1>
+                        <h2 class="">Music you very well may enjoy.</h2>
+                        <v-btn
+                            color="splash"
+                            round
+                            class="font-weight-light bioBtn"
+                            @click.stop="onClickBtn"
+                        >
+                            <h3>Listen Here</h3>
+                        </v-btn>
+                    </v-flex>
+                </v-layout>
+            </v-img> 
+        </v-container>
 </template>
 
 <script>
@@ -67,34 +82,45 @@ export default {
         filterButtons: ['Tech', 'Tunes', 'Blog', 'Refresh'],
         filters: ['GitHub', 'SoundCloud', 'Storyblok', 'Refresh'],
         filter: "Refresh",
-        totalRows: [],
-        reversedRows: [],
+        //totalRows: [],
+        //reversedRows: [],
         responsive: false,
+        tinyresponsive: false,
         logo: require('../assets/DoWhileLogo.svg'),
         bracketLink: require('../assets/BracketLink.svg'),
-        musicLink: require('../assets/MusicLink.svg')
+        musicLink: require('../assets/MusicLink.svg'),
+        dwlSplash: require('../assets/dwlSplash.png')
         }
     },
     methods: {
+        onClickBtn() {
+            this.$router.push('/tunes') 
+        },
         onResponsiveInverted () {
-            if (window.innerWidth < 991) {
+             if (window.innerWidth < 991) {
               this.responsive = true
+              if(window.innerWidth < 551){
+                  this.tinyresponsive = true;
+              }
+              else
+                this.tinyresponsive = false;
             } else {
               this.responsive = false
+              this.tinyresponsive = false;
             }
         }
-    },
-    async created () {
-        var tryStore = this.$store.getters.getAllShuffledRows
-        
-        if (!tryStore) {
-            await this.$store.dispatch('fetchDoWhileData')
-        }
-
-        this.totalRows = this.$store.getters.getAllShuffledRows
-        this.reversedRows = [...this.totalRows]
-        this.reversedRows.reverse()
     }
+    // async created () {
+    //     var tryStore = this.$store.getters.getAllShuffledRows
+        
+    //     if (!tryStore) {
+    //         await this.$store.dispatch('fetchDoWhileData')
+    //     }
+
+    //     this.totalRows = this.$store.getters.getAllShuffledRows
+    //     this.reversedRows = [...this.totalRows]
+    //     this.reversedRows.reverse()
+    // }
 }
 </script>
 
@@ -113,4 +139,90 @@ export default {
       }
     }
   }
+  .nonResponsiveContainer{
+      margin: 0;
+      padding: 0;
+  }
+  .responsiveContainer{
+   margin-top: calc(0% - 70px);
+   width: 99%;
+   height: 100%;
+   padding:0;
+   margin-right:0;
+  }
+  .tinyResponsiveContainer{
+   margin-top: calc(0% - 120px);
+   width: 100%;
+   height: 100%;
+   padding:0;   
+   margin-right:0;
+  }
+  .nonResponsiveLayout {
+    //    background-image: url('../assets/dwlSplash.png');
+    //     width: 100%;
+    //     height: 100%;
+  }
+  .responsiveLayout{
+
+     margin:0 !important;
+     padding:0 !important;
+     width:100%;
+     height:100%;
+  }  
+  .tinyResponsiveLayout{
+
+     margin:0 !important;
+     padding:0 !important;
+     width:100%;
+     height:100%;
+  }  
+  .imgSplashFull{
+
+      width: 100%;
+      margin: -64px 0 0 0;
+      height: 100%;
+ 
+  }
+  .imgSplashResponsive{
+      width: auto;
+  }
+  .imgSplashTinyResponsive{
+      width: auto;
+  }
+  .imgFlexSplashResponsive{
+      padding: 0 0 0 0 !important;
+  }
+  .imgFlexSplashTinyResponsive{
+      padding: 0 0 0 0 !important;
+  }
+  .splashFlex{
+    margin-top: 20%;
+    margin-left: 2%
+  }
+  .splashFlexResponsive{
+      text-align: center;
+      margin-top: -20%;
+      z-index: 100;
+  }
+  .splashFlexTinyResponsive{
+      text-align: center;
+      margin-top: -20%;
+      z-index: 100;
+  }
+  .bioBtn{
+  height:75px;
+  width: 500px;
+  background: rgba(0, 0, 0, 0) !important; 
+  border-color: #0041C2 !important;
+  border-style: solid;
+}
+.bioBtnResponsive{
+  background: rgba(0, 0, 0, 0) !important; 
+  border-color: #0041C2 !important;
+  border-style: solid;
+}
+.responsiveLogo{
+    font-size: 3.5em !important;
+    margin-bottom: 5px !important;
+}
 </style>

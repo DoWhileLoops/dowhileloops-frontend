@@ -61,8 +61,8 @@ $font-size-big:                     36px !default;
 $font-size-small-tag:               65% !default;
 $font-size-toolbar-title:           $font-size-avatar-title;
 $font-size-toolbar-items:           20px !default;
-$font-size-h1:                      4.7rem;
-$font-size-h2:                      2.25rem !default;
+$font-size-h1:                      8.0rem;
+$font-size-h2:                      3.0rem !default;
 $font-size-h3:                      1.6rem;
 $font-size-h4:                      1.2rem !default;
 $font-size-h5:                      1.0625rem !default;
@@ -125,8 +125,11 @@ $card-profile-avatar-pos:           -50px !default;
 //$font-family-sans-serif:            'Roboto', 'Helvetica', 'Arial', sans-serif !default;
 //$font-family-serif:                 'Roboto Slab', 'Times New Roman', serif !default;
 
-$font-family-sans-serif:            'Montserrat', 'Helvetica', 'Arial', sans-serif !default;
-$font-family-serif:                 'Lora', 'Times New Roman', serif !default;
+$font-family-sans-serif:            'Inconsolata', 'Helvetica', 'Arial', sans-serif !default;
+$font-family-serif:                 'Inconsolata', 'Times New Roman', serif !default;
+
+// $font-family-sans-serif:            'Montserrat', 'Helvetica', 'Arial', sans-serif !default;
+// $font-family-serif:                 'Lora', 'Times New Roman', serif !default;
 
 // Tooltips
 $tooltip-min-width:                 130px !default;

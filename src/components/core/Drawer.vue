@@ -15,15 +15,14 @@
         tag="v-list"
         column
       >
-        <v-list-tile avatar>
-          <v-list-tile-avatar mt-4>
+        <v-list-tile >
+          <!-- <v-list-tile-avatar mt-4>
             <v-img contain :src="logo" height="90px" width="90px"/>
-          </v-list-tile-avatar>
-
-          <v-list-tile-title class="title">
+          </v-list-tile-avatar> -->
+          <!-- <v-list-tile-title class="drawerTitle">
             DoWhileLoops
-          </v-list-tile-title>
-
+          </v-list-tile-title> -->
+          <h3 class="drawerTitle">DoWhileLoops</h3>
         </v-list-tile>
         <v-divider/>
         <v-list-tile
@@ -60,7 +59,7 @@ export default {
     }
   },
   data: () => ({
-    logo: require('../../assets/DoWhileLogo.svg'),
+    //logo: require('../../assets/DoWhileLogo.svg'),
     links: [
       {
         to: '/',
@@ -68,25 +67,25 @@ export default {
         text: 'Home'
       },
       {
-        to: '/tech',
-        icon: 'mdi-code-brackets',
-        text: 'Tech'
-      },
-      {
         to: '/tunes',
         icon: 'mdi-music',
         text: 'Tunes'
-      },
-      {
-        to: '/blog',
-        icon: 'mdi-lead-pencil',
-        text: 'Blog'
       },
       {
         to: '/about',
         icon: 'mdi-account',
         text: 'About'
       }
+      // {
+      //   to: '/tech',
+      //   icon: 'mdi-code-brackets',
+      //   text: 'Tech'
+      // },
+      // {
+      //   to: '/blog',
+      //   icon: 'mdi-lead-pencil',
+      //   text: 'Blog'
+      // },
     ]
   }),
   computed: {
