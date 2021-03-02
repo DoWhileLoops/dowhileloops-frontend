@@ -12,18 +12,18 @@
       <v-layout row align-center class="justify-space-between">
           <v-flex xs9 layout class="responsiveNavText justify-start">
             <v-toolbar-title>
-              <v-btn
+              <!-- <v-btn
                 class="default v-btn--simple"
                 dark
                 icon
                 @click.stop="onClickBtn"
               >
               <v-icon color="#2c84f6" class="responsiveHamburger">mdi-menu</v-icon>
-              </v-btn> 
+              </v-btn>  -->
             </v-toolbar-title>
           </v-flex>        
         </v-layout>
-        </v-img> 
+        
 
     </div> 
 
@@ -31,14 +31,14 @@
       <v-layout row align-center class="justify-space-between">
           <v-flex xs9 layout class="responsiveNavText justify-start">
             <v-toolbar-title>
-              <v-btn
+              <!-- <v-btn
                 class="default v-btn--simple"
                 dark
                 icon
                 @click.stop="onClickBtn"
               >
               <v-icon color="#2c84f6" class="responsiveHamburger">mdi-menu</v-icon>
-              </v-btn> 
+              </v-btn>  -->
               <!-- <span v-if="headingContent == 'SingleBlog'" class="responsiveNavText" v-on:click="backToPageManually('Blog')">
                 <v-icon color="#2c84f6">mdi-skip-backward</v-icon>
                 Back To All Blogs

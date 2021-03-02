@@ -1,89 +1,117 @@
 /* eslint-disable */
-
 <template>
+  <v-container v-if="tinyresponsive" fill-height fill-width fluid grid-list-xl class="tinyResponsiveContainer">
+    <v-layout row wrap align-center justify-center class="tinyResponsiveLayout">
 
-    <v-container v-if="tinyresponsive" fill-height fill-width fluid grid-list-xl class="tinyResponsiveContainer">
-            <v-layout row wrap align-center justify-center class="tinyResponsiveLayout">
-                <v-flex xs12 s12 md12 class="imgFlexSplashTinyResponsive">
-                <v-img contain :src="dwlSplash" class="imgSplashTinyResponsive" >
-                    </v-img> 
-                </v-flex>
-                      <v-flex xs12 s12 md12 class="splashFlexTinyResponsive">
-                        <h2 class="main tinyResponsiveLogo">DoWhileLoops</h2>
-                        <h3 class="">Music you very well may enjoy.</h3>
-                        <v-btn
-                            color="splash"
-                            round
-                            class="font-weight-light bioBtnResponsive"
-                            @click.stop="onClickBtn"
-                        >
-                            <h3>Listen Here</h3>
-                        </v-btn>
-                    </v-flex> 
-            </v-layout>    
-        </v-container>
-    
-        <v-container v-else-if="responsive" fill-height fluid grid-list-xl class="responsiveContainer">
-            <v-layout row wrap align-center justify-center class="responsiveLayout">
-                <v-flex xs12 s12 md12 class="imgFlexSplashResponsive">
-                <v-img contain :src="dwlSplash" class="imgSplashResponsive" >
-                    </v-img> 
-                </v-flex>
+        <v-bottom-sheet
+          v-model="sheet"
+          inset
+          class="musicPlayer"
+        >
+          <v-sheet
+              class="text-center"
+              height="1000px"
+          >
+          <MusicPlayer/>
+          </v-sheet>
+      </v-bottom-sheet>
+          <v-flex xs12 s12 md12 class="imgFlexSplashTinyResponsive">
+          <v-img contain :src="dwlSplash" class="imgSplashTinyResponsive" >
+              </v-img> 
+          </v-flex>
+                <v-flex xs12 s12 md12 class="splashFlexTinyResponsive">
+                  <h2 class="main tinyResponsiveLogo">DoWhileLoops</h2>
+                  <h3 class="">Music you very well may enjoy.</h3>
+                  <v-btn
+                      color="splash"
+                      round
+                      class="font-weight-light bioBtnResponsive"
+                      @click.stop="listenHereClick"
+                  >
+                      <h3>Listen Here</h3>
+                  </v-btn>
+              </v-flex> 
+      </v-layout>    
+  </v-container>
 
-                <v-flex xs12 s12 md12 class="splashFlexResponsive">
-                    <h2 class="main responsiveLogo">DoWhileLoops</h2>
-                    <h3 class="">Music you very well may enjoy.</h3>
-                    <v-btn
-                        color="splash"
-                        round
-                        class="font-weight-light bioBtnResponsive"
-                        @click.stop="onClickBtn"
-                    >
-                        <h3>Listen Here</h3>
-                    </v-btn>
-                </v-flex> 
-            </v-layout>                               
-        </v-container>
-
-        <v-container v-else fill-height fluid grid-list-xl text-xs-center class="nonResponsiveContainer">
-            <v-img :src="dwlSplash" class="imgSplashFull" >
-                <v-layout row wrap align-center>
-                    <v-flex md7 lg7 class="splashFlex">
-                        <h1 class="main logo">DoWhileLoops</h1>
-                        <h2 class="">Music you very well may enjoy.</h2>
-                        <v-btn
-                            color="splash"
-                            round
-                            class="font-weight-light bioBtn"
-                            @click.stop="onClickBtn"
-                        >
-                            <h3>Listen Here</h3>
-                        </v-btn>
-                    </v-flex>
-                </v-layout>
-            </v-img> 
-        </v-container>
+  <v-container v-else-if="responsive" fill-height fluid grid-list-xl class="responsiveContainer">
+      <v-bottom-sheet
+          v-model="sheet"
+          inset
+          class="musicPlayer"
+      >
+          <v-sheet
+              class="text-center"
+              height="1000px"
+          >
+            <MusicPlayer/>
+          </v-sheet>
+      </v-bottom-sheet>
+      <v-layout row wrap align-center justify-center class="responsiveLayout">
+          <v-flex xs12 s12 md12 class="imgFlexSplashResponsive">
+          <v-img contain :src="dwlSplash" class="imgSplashResponsive" >
+              </v-img> 
+          </v-flex>
+          <v-flex xs12 s12 md12 class="splashFlexResponsive">
+              <h2 class="main responsiveLogo">DoWhileLoops</h2>
+              <h3 class="">Music you very well may enjoy.</h3>
+              <v-btn
+                  color="splash"
+                  round
+                  class="font-weight-light bioBtnResponsive"
+                  @click.stop="listenHereClick"
+              >
+                  <h3>Listen Here</h3>
+              </v-btn>
+          </v-flex> 
+      </v-layout>                               
+  </v-container>
+  <v-container v-else fill-height fluid grid-list-xl text-xs-center class="nonResponsiveContainer">
+      <v-bottom-sheet
+          v-model="sheet"
+          inset
+          class="musicPlayer"
+      >
+          <v-sheet
+              class="text-center"
+              height="1000px"
+          >
+          <MusicPlayer/>
+          </v-sheet>
+      </v-bottom-sheet>
+      <v-img :src="dwlSplash" class="imgSplashFull" >
+          <v-layout row wrap align-center>
+              <v-flex md7 lg7 class="splashFlex">
+                  <h1 class="main logo">DoWhileLoops</h1>
+                  <h2 class="">Music you very well may enjoy.</h2>
+                  <v-btn
+                      color="splash"
+                      round
+                      class="font-weight-light bioBtn"
+                      @click.stop="listenHereClick"
+                  >
+                      <h3>Listen Here</h3>
+                  </v-btn>
+              </v-flex>
+          </v-layout>
+      </v-img> 
+  </v-container>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import MusicPlayer from '../components/musicPlayer/MusicPlayer'
 export default {
     name: 'Home',
-    mounted () {
-        this.onResponsiveInverted()
-        window.addEventListener('resize', this.onResponsiveInverted)
-        },
-        beforeDestroy () {
-        window.removeEventListener('resize', this.onResponsiveInverted)
+    components: {
+      MusicPlayer
     },
     data: function () {
         return {
         fKey: "source",
+        sheet: false,
         filterButtons: ['Tech', 'Tunes', 'Blog', 'Refresh'],
         filters: ['GitHub', 'SoundCloud', 'Storyblok', 'Refresh'],
         filter: "Refresh",
-        //totalRows: [],
-        //reversedRows: [],
         responsive: false,
         tinyresponsive: false,
         logo: require('../assets/DoWhileLogo.svg'),
@@ -93,8 +121,8 @@ export default {
         }
     },
     methods: {
-        onClickBtn() {
-            this.$router.push('/tunes') 
+        listenHereClick() {
+            this.sheet = !this.sheet
         },
         onResponsiveInverted () {
              if (window.innerWidth < 991) {
@@ -109,18 +137,14 @@ export default {
               this.tinyresponsive = false;
             }
         }
+    },
+    mounted () {
+            this.onResponsiveInverted()
+            window.addEventListener('resize', this.onResponsiveInverted)
+        },
+        beforeDestroy () {
+        window.removeEventListener('resize', this.onResponsiveInverted)
     }
-    // async created () {
-    //     var tryStore = this.$store.getters.getAllShuffledRows
-        
-    //     if (!tryStore) {
-    //         await this.$store.dispatch('fetchDoWhileData')
-    //     }
-
-    //     this.totalRows = this.$store.getters.getAllShuffledRows
-    //     this.reversedRows = [...this.totalRows]
-    //     this.reversedRows.reverse()
-    // }
 }
 </script>
 
@@ -139,6 +163,15 @@ export default {
       }
     }
   }
+  .v-bottom-sheet{
+   background-color: #000000 !important;
+  }
+  .v-sheet{
+      background-color: #000000 !important;
+  }
+  .example-container{
+      background-color: #000000 !important;
+  }
   .nonResponsiveContainer{
       margin: 0;
       padding: 0;
@@ -156,11 +189,6 @@ export default {
    height: 100%;
    padding:0;   
    margin-right:0;
-  }
-  .nonResponsiveLayout {
-    //    background-image: url('../assets/dwlSplash.png');
-    //     width: 100%;
-    //     height: 100%;
   }
   .responsiveLayout{
 

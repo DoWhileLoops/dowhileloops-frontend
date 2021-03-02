@@ -4,7 +4,7 @@
 
     <core-toolbar />
 
-    <core-drawer />
+    <!-- <core-drawer /> -->
 
     <core-view />
   </v-app>
