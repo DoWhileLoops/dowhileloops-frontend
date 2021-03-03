@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div class="example-container">
         <div class="left">
@@ -9,13 +10,14 @@
                     <div class="center">
                     </div>
                     <div>
-                        <v-icon class="show-playlist playlist-toggle-button" size="40">mdi-arrow-down-drop-circle-outline </v-icon>
+                        <v-icon class="show-playlist playlist-toggle-button" size="32">mdi-arrow-down-drop-circle-outline </v-icon>
                     </div>
                 </div>
                 <div id="white-player-center">
-                    <img data-amplitude-song-info="cover_art_url" data-amplitude-playlist="trip_hop" class="main-album-art"/>
+                    <img data-amplitude-song-info="cover_art_url" data-amplitude-playlist="trip_hop" 
+                        :class="{'main-album-art':true, 'main-album-art-fullsize': this.fullsize, 'main-album-art-responsive': this.responsive, 'main-album-art-tinyresponsive': this.tinyresponsive}"/>
                     <div class="song-meta-data">
-                        <span data-amplitude-song-info="name" data-amplitude-playlist="trip_hop" class="song-name"></span>
+                        <span data-amplitude-song-info="name" data-amplitude-playlist="trip_hop" :class="{'song-name':true, 'song-name-fullsize': this.fullsize, 'song-name-responsive': this.responsive, 'song-name-tinyresponsive': this.tinyresponsive}"></span>
                     </div>
                     <div class="time-progress">
                     <div id="progress-container">
@@ -34,39 +36,35 @@
                     </div>
                 </div>
                 <div id="white-player-controls">
-                    <div class="amplitude-shuffle amplitude-shuffle-off" data-amplitude-playlist="trip_hop"  id="shuffle"></div>
-                    <div class="amplitude-prev" data-amplitude-playlist="trip_hop" id="previous"></div>
-                    <div class="amplitude-play-pause" data-amplitude-playlist="trip_hop" id="play-pause"></div>
-                    <div class="amplitude-next" data-amplitude-playlist="trip_hop" id="next"></div>
-                    <div class="amplitude-repeat" data-amplitude-playlist="trip_hop" id="repeat"></div>
+                    <div :class="{'amplitude-shuffle':true, 'amplitude-shuffle-off':true, 'amplitude-shuffle-fullsize': this.fullsize, 'amplitude-shuffle-responsive': this.responsive, 'amplitude-shuffle-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop"  id="shuffle"></div>
+                    <div :class="{'amplitude-prev':true, 'amplitude-prev-fullsize': this.fullsize, 'amplitude-prev-responsive': this.responsive, 'amplitude-prev-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="previous"></div>
+                    <div :class="{'amplitude-play-pause':true, 'amplitude-paused':true, 'amplitude-play-pause-fullsize': this.fullsize, 'amplitude-play-pause-responsive': this.responsive, 'amplitude-play-pause-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="play-pause"></div>
+                    <div :class="{'amplitude-next':true, 'amplitude-next-fullsize': this.fullsize, 'amplitude-next-responsive': this.responsive, 'amplitude-next-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="next"></div>
+                    <div :class="{'amplitude-repeat':true, 'amplitude-repeat-off':true, 'amplitude-repeat-fullsize': this.fullsize, 'amplitude-repeat-responsive': this.responsive, 'amplitude-repeat-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="repeat"></div>
                 </div>
                 <v-layout>
-                    <v-flex xs4>
-                    </v-flex>
-                    <v-flex xs8>
-                        <div id="white-player-playlist-container">
-                            <div class="white-player-playlist-top">
-                                <div>
-                                    <v-icon class="close-playlist playlist-toggle-button" size="40">mdi-arrow-up-drop-circle-outline </v-icon>
-                                </div>
+                    <div id="white-player-playlist-container" :class="{'playlist-container-fullsize': this.fullsize, 'playlist-container-responsive': this.responsive, 'playlist-container-tinyresponsive': this.tinyresponsive}">
+                        <div class="white-player-playlist-top">
+                            <div>
+                                <v-icon class="close-playlist playlist-toggle-button" size="32">mdi-arrow-up-drop-circle-outline </v-icon>
                             </div>
-                            <div class="white-player-playlist">
-                                <div v-for="song in songs" v-bind:key="song.name" class=" amplitude-song-container amplitude-play-pause" :data-amplitude-song-index="song.uid" data-amplitude-playlist="trip_hop">
-                                    <div v-if="song.isFirstTrack">
-                                        <div class="white-player-playlist-song amplitude-song-container white-player-albumart-container">
-                                            <img class="playlist-album-art" :src="song.cover_art_url"/>
-                                            <span class="playlist-artist-album">{{song.album}}</span>
-                                        </div>
+                        </div>
+                        <div class="white-player-playlist">
+                            <div v-for="song in songs" v-bind:key="song.name" class="amplitude-song-container amplitude-play-pause" :data-amplitude-song-index="song.uid" data-amplitude-playlist="trip_hop">
+                                <div v-if="song.isFirstTrack">
+                                    <div class="white-player-playlist-song amplitude-song-container white-player-albumart-container">
+                                        <img class="playlist-album-art" :src="song.cover_art_url"/>
+                                        <span class="playlist-artist-album">{{song.album}}</span>
                                     </div>
-                                    <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause">
-                                        <div class="playlist-song-meta">
-                                            <span class="playlist-song-name">{{song.name}}</span>
-                                        </div>
+                                </div>
+                                <div class="white-player-playlist-song amplitude-song-container amplitude-play-pause">
+                                    <div class="playlist-song-meta">
+                                        <span class="playlist-song-name">{{song.name}}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                    </v-flex>
+                        </div>
+                    </div> 
                 </v-layout>
             </div>
         </div>
@@ -215,11 +213,43 @@ export default {
     data: function () {
         return {        
         songs: songs,
+        playlistToggleSize: 40,
+        fullsize: true,
+        responsive: false,
+        tinyresponsive: false,
         }
     },
     methods: {
+      onResponsiveInverted () {
+             if (window.innerWidth < 991) {
+              this.responsive = true
+
+              if(window.innerWidth < 551){
+                  this.fullsize = false;
+                  this.tinyresponsive = true;
+                  //this.playlistToggleSize = 24;
+              }
+              else
+                //this.playlistToggleSize = 30;
+                this.tinyresponsive = false;
+                this.fullsize = false;
+            } else {
+              //this.playlistToggleSize = 40;
+              this.fullsize = true;
+              this.responsive = false
+              this.tinyresponsive = false;
+            }
+        }
+    },
+    beforeDestroy () {
+    window.removeEventListener('resize', this.onResponsiveInverted)
     },
     mounted () {
+            
+            this.onResponsiveInverted()
+            
+            window.addEventListener('resize', this.onResponsiveInverted)
+            
             //Shows the playlist
             document.getElementsByClassName('show-playlist')[0].addEventListener('click', function() {
                 document.getElementById('white-player-playlist-container').classList.remove('slide-out-top');
@@ -273,99 +303,15 @@ export default {
 //   .play-button{
 //       color: #fff;
 //   }
-  .v-bottom-sheet{
-   //   height: 50px;
-   background-color: #000000 !important;
-  }
-  .v-sheet{
-      background-color: #000000 !important;
-  }
   .example-container{
       background-color: #000000 !important;
+      //height:500px !important;
   }
-  .nonResponsiveContainer{
-      margin: 0;
-      padding: 0;
-  }
-  .responsiveContainer{
-   margin-top: calc(0% - 70px);
-   width: 99%;
-   height: 100%;
-   padding:0;
-   margin-right:0;
-  }
-  .tinyResponsiveContainer{
-   margin-top: calc(0% - 120px);
-   width: 100%;
-   height: 100%;
-   padding:0;   
-   margin-right:0;
-  }
-  .nonResponsiveLayout {
-  }
-  .responsiveLayout{
 
-     margin:0 !important;
-     padding:0 !important;
-     width:100%;
-     height:100%;
-  }  
-  .tinyResponsiveLayout{
+  // .v-card__text{
+  //   overflow: auto;
+  // }
 
-     margin:0 !important;
-     padding:0 !important;
-     width:100%;
-     height:100%;
-  }  
-  .imgSplashFull{
-
-      width: 100%;
-      margin: -64px 0 0 0;
-      height: 100%;
- 
-  }
-  .imgSplashResponsive{
-      width: auto;
-  }
-  .imgSplashTinyResponsive{
-      width: auto;
-  }
-  .imgFlexSplashResponsive{
-      padding: 0 0 0 0 !important;
-  }
-  .imgFlexSplashTinyResponsive{
-      padding: 0 0 0 0 !important;
-  }
-  .splashFlex{
-    margin-top: 20%;
-    margin-left: 2%
-  }
-  .splashFlexResponsive{
-      text-align: center;
-      margin-top: -20%;
-      z-index: 100;
-  }
-  .splashFlexTinyResponsive{
-      text-align: center;
-      margin-top: -20%;
-      z-index: 100;
-  }
-  .bioBtn{
-  height:75px;
-  width: 500px;
-  background: rgba(0, 0, 0, 0) !important; 
-  border-color: #0041C2 !important;
-  border-style: solid;
-}
-.bioBtnResponsive{
-  background: rgba(0, 0, 0, 0) !important; 
-  border-color: #0041C2 !important;
-  border-style: solid;
-}
-.responsiveLogo{
-    font-size: 3.5em !important;
-    margin-bottom: 5px !important;
-}
 
 //******************AMPLITUDE***************** */
 
@@ -395,13 +341,13 @@ div#white-player {
   position: relative; }
 
 div.white-player-top {
-  height: 64px;
+  height: 32px;
   display: flex;
   width: 100%;
   align-items: center; 
   text-align: right;
   padding-right:25px;
-  padding-top:15px;
+  padding-top:10px;
   //justify-content: right;
   }
   div.white-player-top div {
@@ -421,34 +367,80 @@ div.white-player-top {
 div#white-player-center img.main-album-art {
   display: block;
   margin: auto;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
+  //margin-top: 16px;
+  //margin-bottom: 50px;
+  //border-radius: 8px;
+  //width: 425px;
+  //height: 425px; 
+  }
+  .main-album-art-fullsize {
   margin-top: 16px;
   margin-bottom: 50px;
   border-radius: 8px;
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
   width: 425px;
-  height: 425px; }
+  height: 425px; 
+  }
+  .main-album-art-responsive {
+  margin-top: 16px;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  width: 400px;
+  height: 400px; 
+  }
+  .main-album-art-tinyresponsive {
+  margin-top: 16px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  width: 275px;
+  height: 275px; 
+  }
 div#white-player-center div.song-meta-data span.song-name {
   color: #ffffff;
   display: block;
   text-align: center;
-  font-size: 36px;
   font-family: 'Inconsolata';
+  }
+  div#white-player-center div.song-meta-data span.song-name-fullsize {
+  font-size: 36px;
   margin-top: 25px;
   margin-bottom: 25px;
+  }
+  div#white-player-center div.song-meta-data span.song-name-responsive {
+  font-size: 32px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  }
+  div#white-player-center div.song-meta-data span.song-name-tinyresponsive {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   }
 div#white-player-center div.song-meta-data span.song-artist {
   color: #AAAFB3;
   display: block;
   text-align: center;
-  font-size: 14px; }
+  font-size: 14px; 
+  }
 div#white-player-center div.time-progress {
-  margin-bottom: 30px; }
+  margin-bottom: 12px; 
+  }
+  // .time-progress-fullsize {
+  // margin-bottom: 30px; 
+  // }
+  // .time-progress-responsive {
+  // margin-bottom: 12px; 
+  // }
+  // .time-progress-tinyresponsive {
+  // margin-bottom: 30px; 
+  // }
   div#white-player-center div.time-progress span.current-time {
     color: #AAAFB3;
     font-size: 12px;
     display: block;
     float: left;
-    margin-left: 20px; }
+    margin-left: 20px; 
+    }
   div#white-player-center div.time-progress div#progress-container {
     margin-left: 20px;
     margin-right: 20px;
@@ -648,86 +640,144 @@ div#white-player-center div.time-progress {
     font-size: 12px;
     display: block;
     float: right;
-    margin-right: 20px; }
+    margin-right: 20px; 
+    }
 
 div#white-player-controls {
   text-align: center;
-  padding-bottom: 35px; }
-  div#white-player-controls div#shuffle {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-size: 100% !important; 
-    cursor: pointer;
-    vertical-align: middle;
-    margin-right: 24px; }
-    div#white-player-controls div#shuffle.amplitude-shuffle-off {
-      background: url("../../assets/ShuffleOff.svg"); 
-      }
-    div#white-player-controls div#shuffle.amplitude-shuffle-on {
-      background: url("../../assets/ShuffleOn.svg"); 
-      }
+  //padding-bottom: 75px; 
+  //padding-bottom: 12px; 
+  }
   div#white-player-controls div#previous {
     display: inline-block;
-    height: 60px;
-    width: 60px;
+    //height: 60px;
+    //width: 60px;
     cursor: pointer;
     background-size: 100% !important; 
     background: url("../../assets/SkipBackwardButton.svg"); 
     vertical-align: middle;
-    margin-right: 16px; 
+    //margin-right: 16px; 
     }
   div#white-player-controls div#play-pause {
     display: inline-block;
-    width: 100px;
-    height: 100px;
     cursor: pointer;
     vertical-align: middle;
-    margin-right: 16px; }
-    div#white-player-controls div#play-pause.amplitude-paused {
-      background: url("../../assets/PlayButton.svg"); 
-      background-size: 100%;
-      
-      }
-    div#white-player-controls div#play-pause.amplitude-playing {
-    background: url("../../assets/PauseButton.svg"); 
-    background-size: 100%;
-      }
+    //height: 100px;
+    //width: 100px;
+    // margin-right: 16px; 
+    }
   div#white-player-controls div#next {
     display: inline-block;
-    height: 60px;
-    width: 60px;
     cursor: pointer;
     background-size: 100% !important; 
     background: url("../../assets/SkipForwardButton.svg"); 
     vertical-align: middle;
-    margin-right: 24px; 
+    // height: 60px;
+    // width: 60px;
+    // margin-right: 24px; 
+    }
+    div#white-player-controls div#shuffle {
+    display: inline-block;
+    background-size: 100% !important; 
+    cursor: pointer;
+    vertical-align: middle;
+    //width: 32px;
+    //height: 32px;
+    //margin-right: 24px; 
     }
   div#white-player-controls div#repeat {
     display: inline-block;
     background-size: 100% !important; 
-    width: 32px;
-    height: 32px;
     cursor: pointer;
-    vertical-align: middle; }
+    vertical-align: middle; 
+    // width: 32px;
+    // height: 32px;
+    }
+    div#white-player-controls div#play-pause.amplitude-paused {
+      background: url("../../assets/PlayButton.svg"); 
+      background-size: 100%;
+    }
+    div#white-player-controls div#play-pause.amplitude-playing {
+      background: url("../../assets/PauseButton.svg"); 
+      background-size: 100%;
+    }
     div#white-player-controls div#repeat.amplitude-repeat-off {
       background: url("../../assets/RepeatOff.svg"); 
     }
     div#white-player-controls div#repeat.amplitude-repeat-on {
       background: url("../../assets/RepeatOn.svg"); 
     }
+    div#white-player-controls div#shuffle.amplitude-shuffle-off {
+      background: url("../../assets/ShuffleOff.svg"); 
+      }
+    div#white-player-controls div#shuffle.amplitude-shuffle-on {
+      background: url("../../assets/ShuffleOn.svg"); 
+      }
+.amplitude-shuffle-fullsize, .amplitude-repeat-fullsize {
+	  width: 32px;
+    height: 32px;
+}			
+.amplitude-shuffle-responsive, .amplitude-repeat-responsive {
+	  //20% off btns
+    width: 26px;
+    height: 26px;
+}			
+.amplitude-shuffle-tinyresponsive, .amplitude-repeat-tinyresponsive {
+	  width: 20px;
+    height: 20px;
+}
+
+.amplitude-prev-fullsize, .amplitude-next-fullsize{
+	  height: 60px;
+    width: 60px;
+    margin: 0 32px;
+}
+.amplitude-prev-responsive, .amplitude-next-responsive{
+	  height: 48px;
+    width: 48px;
+    margin: 0 24px;
+}
+.amplitude-prev-tinyresponsive, .amplitude-next-tinyresponsive{
+	width: 24px;
+    height: 24px;
+    margin: 0 12px;
+}
+
+.amplitude-play-pause-fullsize{
+	width: 100px;
+  height: 100px;
+  //margin-right: 16px; 
+}
+.amplitude-play-pause-responsive {
+	width: 80px;
+  height: 80px;
+  //margin-right: 12px; 
+}
+.amplitude-play-pause-tinyresponsive{
+	width: 48px;
+    height: 48px;
+}
+
+
 
 div#white-player-playlist-container {
   position: absolute;
   color:#fff;
   top: 0;
   right: 0;
-  left: 55%;
+  // left: 55%;
+  //left: 0;
   bottom: 0;
   background-color: black;
   z-index: 9999;
   display: none;
   border-radius: 8px; 
+  }
+  .playlist-container-fullsize{
+    left: 40%;
+  }
+  .playlist-container-responsive, .playlist-container-tinyresponsive{
+    left: 0;
   }
 
 div.white-player-playlist-top {
@@ -804,7 +854,7 @@ div.white-player-playlist-song {
       color: #fff;
       }
     .playlist-artist-album{
-      font-size: 30px;
+      font-size: 24px;
       font-family: 'Inconsolata' !important;
       color: #fff;
       text-decoration: underline;
@@ -821,28 +871,33 @@ div.white-player-playlist-song::after {
 div.white-player-playlist-controls {
   background-color: #F5F5F6;
   border-radius: 8px;
-  padding: 16px; }
+  padding: 16px; 
+  }
   div.white-player-playlist-controls img.playlist-album-art {
     float: left;
     box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     height: 64px;
-    width: 64px; }
+    width: 64px; 
+    }
   div.white-player-playlist-controls div.playlist-controls {
     float: left;
     margin-left: 25px;
-    width: calc( 100% - 89px ); }
+    width: calc( 100% - 89px ); 
+    }
     div.white-player-playlist-controls div.playlist-controls div.playlist-meta-data {
       display: inline-block;
       width: calc(100% - 125px);
-      vertical-align: middle; }
+      vertical-align: middle; 
+      }
       div.white-player-playlist-controls div.playlist-controls div.playlist-meta-data span.song-name {
         display: block;
         color: #414344;
         font-size: 20px;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis; }
+        text-overflow: ellipsis; 
+        }
       div.white-player-playlist-controls div.playlist-controls div.playlist-meta-data span.song-artist {
         display: block;
         color: #AAAFB3;
@@ -915,14 +970,16 @@ body {
   line-height: 1.5; }
   body div.example-container {
     width: 100%;
-    display: flex; }
+    display: flex; 
+    }
     body div.example-container div.left {
       width: 100%; 
       }
     body div.example-container div.right {
       width: 50%;
       display: flex;
-      flex-wrap: wrap; }
+      flex-wrap: wrap; 
+      }
   body span.playlist-title {
     display: block;
     padding-top: 10px;
@@ -936,7 +993,8 @@ body {
 
 @media screen and (max-width: 39.9375em) {
   body div.example-container {
-    flex-direction: column; }
+    flex-direction: column; 
+    }
     body div.example-container div.left {
       width: 100%; }
     body div.example-container div.right {
