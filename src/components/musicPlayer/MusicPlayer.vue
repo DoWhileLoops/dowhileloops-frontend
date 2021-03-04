@@ -213,7 +213,6 @@ export default {
     data: function () {
         return {        
         songs: songs,
-        playlistToggleSize: 40,
         fullsize: true,
         responsive: false,
         tinyresponsive: false,
@@ -227,14 +226,11 @@ export default {
               if(window.innerWidth < 551){
                   this.fullsize = false;
                   this.tinyresponsive = true;
-                  //this.playlistToggleSize = 24;
               }
               else
-                //this.playlistToggleSize = 30;
                 this.tinyresponsive = false;
                 this.fullsize = false;
             } else {
-              //this.playlistToggleSize = 40;
               this.fullsize = true;
               this.responsive = false
               this.tinyresponsive = false;
@@ -300,22 +296,11 @@ export default {
       }
     }
   }
-//   .play-button{
-//       color: #fff;
-//   }
   .example-container{
       background-color: #000000 !important;
-      //height:500px !important;
   }
 
-  // .v-card__text{
-  //   overflow: auto;
-  // }
-
-
 //******************AMPLITUDE***************** */
-
-
 
 HTML CSS JSResult Skip Results Iframe
 EDIT ON
@@ -341,7 +326,7 @@ div#white-player {
   position: relative; }
 
 div.white-player-top {
-  height: 32px;
+  height: 48px;
   display: flex;
   width: 100%;
   align-items: center; 
@@ -368,11 +353,6 @@ div#white-player-center img.main-album-art {
   display: block;
   margin: auto;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
-  //margin-top: 16px;
-  //margin-bottom: 50px;
-  //border-radius: 8px;
-  //width: 425px;
-  //height: 425px; 
   }
   .main-album-art-fullsize {
   margin-top: 16px;
@@ -425,15 +405,6 @@ div#white-player-center div.song-meta-data span.song-artist {
 div#white-player-center div.time-progress {
   margin-bottom: 12px; 
   }
-  // .time-progress-fullsize {
-  // margin-bottom: 30px; 
-  // }
-  // .time-progress-responsive {
-  // margin-bottom: 12px; 
-  // }
-  // .time-progress-tinyresponsive {
-  // margin-bottom: 30px; 
-  // }
   div#white-player-center div.time-progress span.current-time {
     color: #AAAFB3;
     font-size: 12px;
@@ -645,26 +616,18 @@ div#white-player-center div.time-progress {
 
 div#white-player-controls {
   text-align: center;
-  //padding-bottom: 75px; 
-  //padding-bottom: 12px; 
   }
   div#white-player-controls div#previous {
     display: inline-block;
-    //height: 60px;
-    //width: 60px;
     cursor: pointer;
     background-size: 100% !important; 
     background: url("../../assets/SkipBackwardButton.svg"); 
     vertical-align: middle;
-    //margin-right: 16px; 
     }
   div#white-player-controls div#play-pause {
     display: inline-block;
     cursor: pointer;
     vertical-align: middle;
-    //height: 100px;
-    //width: 100px;
-    // margin-right: 16px; 
     }
   div#white-player-controls div#next {
     display: inline-block;
@@ -672,26 +635,18 @@ div#white-player-controls {
     background-size: 100% !important; 
     background: url("../../assets/SkipForwardButton.svg"); 
     vertical-align: middle;
-    // height: 60px;
-    // width: 60px;
-    // margin-right: 24px; 
     }
     div#white-player-controls div#shuffle {
     display: inline-block;
     background-size: 100% !important; 
     cursor: pointer;
     vertical-align: middle;
-    //width: 32px;
-    //height: 32px;
-    //margin-right: 24px; 
     }
   div#white-player-controls div#repeat {
     display: inline-block;
     background-size: 100% !important; 
     cursor: pointer;
-    vertical-align: middle; 
-    // width: 32px;
-    // height: 32px;
+    vertical-align: middle;
     }
     div#white-player-controls div#play-pause.amplitude-paused {
       background: url("../../assets/PlayButton.svg"); 
@@ -718,7 +673,6 @@ div#white-player-controls {
     height: 32px;
 }			
 .amplitude-shuffle-responsive, .amplitude-repeat-responsive {
-	  //20% off btns
     width: 26px;
     height: 26px;
 }			
@@ -746,12 +700,10 @@ div#white-player-controls {
 .amplitude-play-pause-fullsize{
 	width: 100px;
   height: 100px;
-  //margin-right: 16px; 
 }
 .amplitude-play-pause-responsive {
 	width: 80px;
   height: 80px;
-  //margin-right: 12px; 
 }
 .amplitude-play-pause-tinyresponsive{
 	width: 48px;
@@ -765,8 +717,6 @@ div#white-player-playlist-container {
   color:#fff;
   top: 0;
   right: 0;
-  // left: 55%;
-  //left: 0;
   bottom: 0;
   background-color: black;
   z-index: 9999;
@@ -781,7 +731,7 @@ div#white-player-playlist-container {
   }
 
 div.white-player-playlist-top {
-  height: 64px;
+  height: 32px;
   text-align: right;
   padding-right:25px;
   padding-top:15px;
@@ -808,8 +758,9 @@ div.white-player-up-next {
 
 div.white-player-playlist {
   margin-top: 32px;
-  height: calc( 100% - 234px );
-  overflow-y: scroll; }
+  height: 85%;
+  overflow-y: scroll; 
+  }
 
 div.white-player-playlist-song {
   border-bottom: 1px solid #F5F5F6;

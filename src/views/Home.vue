@@ -7,7 +7,6 @@
           v-model="sheet"
           inset
           class="musicPlayer"
-          height="500px"
         >
           <v-sheet
               class="text-center sheetTinyResponsive"
@@ -43,7 +42,7 @@
       >
           <v-sheet
               class="text-center sheetResponsive"
-              height="500px"
+              height="700px"
           >
             <MusicPlayer/>
           </v-sheet>
@@ -75,10 +74,9 @@
       >
           <v-sheet
               class="text-center sheetFullSize"
+              height="745px"
           >
-          <v-virtual-scroll>
-            <MusicPlayer/>
-          </v-virtual-scroll>
+            <MusicPlayer/>          
           </v-sheet>
       </v-bottom-sheet>
       <v-img :src="dwlSplash" class="imgSplashFull" >
@@ -169,25 +167,15 @@ export default {
    background-color: #000000 !important;
    //height: 100%;
 
-   //height:500px;
+   //height:1000px !important;
    overflow: auto !important;
   }
   .v-sheet{
       background-color: #000000 !important;
   }
-  .sheetFullSize{
-      //height:50% !important;
-    //height:700px !important;
-  }
-  .sheetResponsive{
-    //height:600px !important;  
-  }
-  .sheetTinyResponsive{
-    //height:550px !important;
-  }
-//   .musicPlayer{
-//       height:100%;
-//   }
+  .v-dialog{
+      max-height:95% !important;
+  }   
   .nonResponsiveContainer{
       margin: 0;
       padding: 0;
