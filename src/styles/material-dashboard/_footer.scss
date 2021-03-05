@@ -1,10 +1,10 @@
 .theme--light.v-footer {
-  // border-top: $footer-border-top;
   background: transparent;
   padding: $padding-general $padding-x-footer;
 }
 
 .v-footer {
+
   .footer-links {
     font-weight: $font-weight-bolder;
     text-decoration: none;
@@ -12,6 +12,7 @@
     font-size: $font-size-small;
     padding: $padding-general;
     line-height: $line-height-footer-items;
+    
 
     &:hover,
     &:focus,
@@ -34,6 +35,12 @@
   }
 }
 
+.footer-items{
+  padding-bottom: 18px;
+  //margin-bottom: 0;
+  padding-right: 0;
+}
+
 @media all and (max-width: 991px) {
   .v-footer {
     height: auto !important;
@@ -43,6 +50,7 @@
   .footer-items,
   .copyright {
     width: 100%;
+    text-align: right;
   }
 
   .copyright {
@@ -54,7 +62,7 @@
   .footer-items,
   .copyright {
     width: unset;
-    text-align: center;
+    text-align: right;
   }
 
   .copyright {

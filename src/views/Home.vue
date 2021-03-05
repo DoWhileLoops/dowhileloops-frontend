@@ -170,6 +170,11 @@ export default {
    //height:1000px !important;
    overflow: auto !important;
   }
+  //TEST - HIDE SCROLLBAR
+//   ::-webkit-scrollbar {
+//     width: 0;  /* Remove scrollbar space */
+//     background: transparent;  /* Optional: just make scrollbar invisible */
+// }
   .v-sheet{
       background-color: #000000 !important;
   }

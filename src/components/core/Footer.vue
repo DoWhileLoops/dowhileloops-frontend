@@ -2,35 +2,62 @@
   <v-footer
     id="core-footer"
     absolute
-    height="82"
+    height="55"
   >
+  
+  <v-layout>
+    
+  </v-layout>
     <div class="footer-items">
       <span
         v-for="link in links"
         :key="link.name"
+        class="footerItem"
       >
-          <a v-if="link.name === 'Home'"
-          :href="link.Link"
-          v-bind:class="{'mr-4': !responsive, 'mr-2': responsive}"
-          class="tertiary--text footer-links">
-          <v-icon size="35">
-            {{ link.Icon }}
-          </v-icon>
-        </a>
           <a
-          :href="link.Link"
-          v-else
+          :href="link.name != 'Info' ? link.Link : null"
           target="_blank"
-          v-bind:class="{'mr-4': !responsive, 'mr-2': responsive}"
-          class="tertiary--text footer-links"
+          class="tertiary--text footer-links mr-3"
           >
-          <v-icon size="35">
-            {{ link.Icon }}
-          </v-icon>
+            <template v-if="link.name == 'Info'">
+              <img src="../../assets/About.svg" class="infoIcon" @click.stop="dialog = true">
+              <v-dialog
+                v-model="dialog"
+                width="500">
+                <v-card>
+                  <v-card-title class="headline grey lighten-2">
+                    Privacy Policy
+                  </v-card-title>
+                  <v-card-text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </v-card-text>
+                  <v-divider></v-divider>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="primary"
+                      text
+                      @click="dialog = false"
+                    >
+                      I accept
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </template>
+            <template v-if="link.name == 'ITunes'">
+              <img src="../../assets/iTunes_Store_icon_wht.svg" class="iTunesIcon">
+            </template>            
+            <template v-else>
+                <v-icon :size="link.name=='Spotify' ? 32 : 35" color="#fff">
+                {{ link.Icon }}
+              </v-icon>
+            </template>          
           </a>
       </span>
     </div>
-    <v-spacer/>
+    
   </v-footer>
 </template>
 
@@ -38,13 +65,12 @@
 export default {
   data: () => ({
     responsive: false,
+    dialog: false,
     links: [
-      { name: 'Home', Link: '/#', Icon: 'mdi-home' },
-      { name: 'LinkedIn', Link: 'https://www.linkedin.com/in/christopher-clemons-53839b107', Icon: 'mdi-linkedin-box' },
-      { name: 'GitHub', Link: 'https://github.com/dowhileloops', Icon: 'mdi-github-circle' },
-      // { name: 'Soundcloud', Link: 'https://open.spotify.com/artist/4dfVsaqVgf5u6q660xAGoj?si=KC_3FamWQZ2ZdSA79nBoZQ', Icon: 'mdi-spotify' }
-      // { name: 'Soundcloud', Link: 'https://open.spotify.com/artist/4dfVsaqVgf5u6q660xAGoj?si=KC_3FamWQZ2ZdSA79nBoZQ', Icon: 'mdi-amazon' }
-      //{ name: 'Soundcloud', Link: 'https://open.spotify.com/artist/4dfVsaqVgf5u6q660xAGoj?si=KC_3FamWQZ2ZdSA79nBoZQ', Icon: 'mdi-apple' }
+      { name: 'Spotify', Link: 'https://open.spotify.com/artist/4dfVsaqVgf5u6q660xAGoj?si=L5bSjH7lQHiH46bBtywLEA', Icon: 'mdi-spotify' },
+      { name: 'YouTube', Link: 'https://music.youtube.com/channel/UC3NSF1Ldq-CdU-7N1bAGFAA', Icon: 'mdi-youtube' },
+      { name: 'ITunes', Link: 'https://music.apple.com/us/artist/dowhileloops/1521112901?itsct=music_box&itscg=30200&ct=artists_do_while_loops&ls=1&app=music', ImgSrc: "../../assets/iTunes_Store_icon_wht.svg"},
+      { name: 'Info', ImgSrc: "../../assets/About.svg"}
     ]
   }),
   mounted () {
@@ -73,5 +99,17 @@ export default {
 <style>
 #core-footer {
   z-index: 0;
+}
+.footerItem{
+  text-align: center;
+  margin-left:5px !important;
+}
+.iTunesIcon{
+  height: 27px;
+  width: 27px;
+}
+.infoIcon{
+  height: 32px;
+  width: 32px;
 }
 </style>
