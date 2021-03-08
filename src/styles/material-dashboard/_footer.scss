@@ -5,6 +5,8 @@
 
 .v-footer {
 
+  overflow:hidden;
+
   .footer-links {
     font-weight: $font-weight-bolder;
     text-decoration: none;
@@ -36,8 +38,7 @@
 }
 
 .footer-items{
-  padding-bottom: 18px;
-  //margin-bottom: 0;
+  padding-top: 5px;
   padding-right: 0;
 }
 

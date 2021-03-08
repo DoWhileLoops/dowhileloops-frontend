@@ -14,33 +14,33 @@
                     </div>
                 </div>
                 <div id="white-player-center">
-                    <img data-amplitude-song-info="cover_art_url" data-amplitude-playlist="trip_hop" 
+                    <img data-amplitude-song-info="cover_art_url" data-amplitude-playlist="dwlTunes" 
                         :class="{'main-album-art':true, 'main-album-art-fullsize': this.fullsize, 'main-album-art-responsive': this.responsive, 'main-album-art-tinyresponsive': this.tinyresponsive}"/>
                     <div class="song-meta-data">
-                        <span data-amplitude-song-info="name" data-amplitude-playlist="trip_hop" :class="{'song-name':true, 'song-name-fullsize': this.fullsize, 'song-name-responsive': this.responsive, 'song-name-tinyresponsive': this.tinyresponsive}"></span>
+                        <span data-amplitude-song-info="name" data-amplitude-playlist="dwlTunes" :class="{'song-name':true, 'song-name-fullsize': this.fullsize, 'song-name-responsive': this.responsive, 'song-name-tinyresponsive': this.tinyresponsive}"></span>
                     </div>
                     <div class="time-progress">
                     <div id="progress-container">
-                        <input type="range" class="amplitude-song-slider" data-amplitude-playlist="trip_hop"/>
-                        <progress id="song-played-progress" class="amplitude-song-played-progress" data-amplitude-playlist="trip_hop"></progress>
+                        <input type="range" class="amplitude-song-slider" step=".1" data-amplitude-playlist="dwlTunes"/>
+                        <progress id="song-played-progress" class="amplitude-song-played-progress" amplitude-main-song-played-progress="true" data-amplitude-playlist="dwlTunes"></progress>
                         <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="0"></progress>
                     </div>
                     <div class="time-container">
                         <span class="current-time">
-                            <span class="amplitude-current-minutes" data-amplitude-playlist="trip_hop"></span>:<span class="amplitude-current-seconds" data-amplitude-playlist="trip_hop"></span>
+                            <span class="amplitude-current-minutes" data-amplitude-playlist="dwlTunes"></span>:<span class="amplitude-current-seconds" data-amplitude-playlist="dwlTunes"></span>
                         </span>
                     </div>
                         <span class="duration">
-                            <span class="amplitude-duration-minutes" data-amplitude-playlist="trip_hop"></span>:<span class="amplitude-duration-seconds" data-amplitude-playlist="trip_hop"></span>
+                            <span class="amplitude-duration-minutes" data-amplitude-playlist="dwlTunes"></span>:<span class="amplitude-duration-seconds" data-amplitude-playlist="dwlTunes"></span>
                         </span>
                     </div>
                 </div>
                 <div id="white-player-controls">
-                    <div :class="{'amplitude-shuffle':true, 'amplitude-shuffle-off':true, 'amplitude-shuffle-fullsize': this.fullsize, 'amplitude-shuffle-responsive': this.responsive, 'amplitude-shuffle-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop"  id="shuffle"></div>
-                    <div :class="{'amplitude-prev':true, 'amplitude-prev-fullsize': this.fullsize, 'amplitude-prev-responsive': this.responsive, 'amplitude-prev-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="previous"></div>
-                    <div :class="{'amplitude-play-pause':true, 'amplitude-paused':true, 'amplitude-play-pause-fullsize': this.fullsize, 'amplitude-play-pause-responsive': this.responsive, 'amplitude-play-pause-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="play-pause"></div>
-                    <div :class="{'amplitude-next':true, 'amplitude-next-fullsize': this.fullsize, 'amplitude-next-responsive': this.responsive, 'amplitude-next-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="next"></div>
-                    <div :class="{'amplitude-repeat':true, 'amplitude-repeat-off':true, 'amplitude-repeat-fullsize': this.fullsize, 'amplitude-repeat-responsive': this.responsive, 'amplitude-repeat-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="trip_hop" id="repeat"></div>
+                    <div :class="{'amplitude-shuffle':true, 'amplitude-shuffle-off':true, 'amplitude-shuffle-fullsize': this.fullsize, 'amplitude-shuffle-responsive': this.responsive, 'amplitude-shuffle-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="dwlTunes"  id="shuffle"></div>
+                    <div :class="{'amplitude-prev':true, 'amplitude-prev-fullsize': this.fullsize, 'amplitude-prev-responsive': this.responsive, 'amplitude-prev-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="dwlTunes" id="previous"></div>
+                    <div :class="{'amplitude-play-pause':true, 'amplitude-paused':true, 'amplitude-play-pause-fullsize': this.fullsize, 'amplitude-play-pause-responsive': this.responsive, 'amplitude-play-pause-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="dwlTunes" id="play-pause"></div>
+                    <div :class="{'amplitude-next':true, 'amplitude-next-fullsize': this.fullsize, 'amplitude-next-responsive': this.responsive, 'amplitude-next-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="dwlTunes" id="next"></div>
+                    <div :class="{'amplitude-repeat':true, 'amplitude-repeat-off':true, 'amplitude-repeat-fullsize': this.fullsize, 'amplitude-repeat-responsive': this.responsive, 'amplitude-repeat-tinyresponsive': this.tinyresponsive}" data-amplitude-playlist="dwlTunes" id="repeat"></div>
                 </div>
                 <v-layout>
                     <div id="white-player-playlist-container" :class="{'playlist-container-fullsize': this.fullsize, 'playlist-container-responsive': this.responsive, 'playlist-container-tinyresponsive': this.tinyresponsive}">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="white-player-playlist">
-                            <div v-for="song in songs" v-bind:key="song.name" class="amplitude-song-container amplitude-play-pause" :data-amplitude-song-index="song.uid" data-amplitude-playlist="trip_hop">
+                            <div v-for="song in songs" v-bind:key="song.name" class="amplitude-song-container amplitude-play-pause" :data-amplitude-song-index="song.uid" data-amplitude-playlist="dwlTunes">
                                 <div v-if="song.isFirstTrack">
                                     <div class="white-player-playlist-song amplitude-song-container white-player-albumart-container">
                                         <img class="playlist-album-art" :src="song.cover_art_url"/>
@@ -259,6 +259,12 @@ export default {
                 document.getElementById('white-player-playlist-container').style.display = "none";
             });
 
+            document.getElementById('song-played-progress').addEventListener('click', function( e ){
+              var offset = this.getBoundingClientRect();
+              var x = e.pageX - offset.left;
+              Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
+            });
+
             var json = {
             "songs": [
                 {
@@ -270,7 +276,7 @@ export default {
                 }
             ],
             "playlists": {
-                "trip_hop": {
+                "dwlTunes": {
                 songs: songs
                 }
             }

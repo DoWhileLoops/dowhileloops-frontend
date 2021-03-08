@@ -17,7 +17,7 @@
       </v-bottom-sheet>
           <v-flex xs12 s12 md12 class="imgFlexSplashTinyResponsive">
           <v-img contain :src="dwlSplash" class="imgSplashTinyResponsive" >
-              </v-img> 
+          </v-img> 
           </v-flex>
                 <v-flex xs12 s12 md12 class="splashFlexTinyResponsive">
                   <h2 class="main tinyResponsiveLogo">DoWhileLoops</h2>
@@ -214,9 +214,8 @@ export default {
      height:100%;
   }  
   .imgSplashFull{
-
-      width: 100%;
       margin: -64px 0 0 0;
+      width: 100%;
       height: 100%;
  
   }

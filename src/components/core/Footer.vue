@@ -4,8 +4,7 @@
     absolute
     height="55"
   >
-  
-  <v-layout>
+    <v-layout>
     
   </v-layout>
     <div v-if="tinyresponsive" class="footer-items-tinyresponsive">
