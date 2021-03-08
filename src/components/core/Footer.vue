@@ -1,8 +1,8 @@
 <template>
   <v-footer
     id="core-footer"
-    absolute
-    height="55"
+    :height= "75"
+    :class="[tinyresponsive ? 'footerTinyResponsive' : responsive ? 'footerResponsive' : 'footernonResponsive']"
   >
     <v-layout>
     
@@ -45,12 +45,12 @@
             </template>
             <template v-if="link.name == 'ITunes'">
               <img src="../../assets/iTunes_Store_icon_wht.svg" class="iTunesIconTinyResponsive">
-            </template>            
+            </template>
             <template v-else>
                   <v-icon :size="link.name=='Spotify' ? 26 : 29" color="#fff">
                 {{ link.Icon }}
               </v-icon>
-            </template>          
+            </template>
           </a>
       </span>
     </div>
@@ -126,7 +126,6 @@ export default {
   beforeDestroy () {
     window.removeEventListener('resize', this.onResponsiveInverted);
   },
-
   methods: {
     onResponsiveInverted () {
       if (window.innerWidth < 991) {
@@ -169,6 +168,15 @@ export default {
   background: rgba(0, 0, 0, 0) !important; 
   border-color: #0041C2 !important;
   border-style: solid;
+}
+.footerTinyResponsive{
+ padding-top: 45px !important;
+}
+.footerResponsive{
+  padding-top: 45px !important;
+}
+.footernonResponsive{
+  padding-top: 0 !important;
 }
 .footerItem{
   text-align: center;

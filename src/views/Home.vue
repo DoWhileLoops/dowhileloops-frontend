@@ -23,7 +23,6 @@
                   <h2 class="main tinyResponsiveLogo">DoWhileLoops</h2>
                   <h3 class="">Music you very well may enjoy.</h3>
                   <v-btn
-                      color="splash"
                       round
                       class="font-weight-light bioBtnResponsive"
                       @click.stop="listenHereClick"
@@ -56,7 +55,6 @@
               <h2 class="main responsiveLogo">DoWhileLoops</h2>
               <h3 class="">Music you very well may enjoy.</h3>
               <v-btn
-                  color="splash"
                   round
                   class="font-weight-light bioBtnResponsive"
                   @click.stop="listenHereClick"
@@ -85,7 +83,6 @@
                   <h1 class="main logo">DoWhileLoops</h1>
                   <h2 class="">Music you very well may enjoy.</h2>
                   <v-btn
-                      color="splash"
                       round
                       class="font-weight-light bioBtn"
                       @click.stop="listenHereClick"

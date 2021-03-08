@@ -21,7 +21,7 @@ export default {
 
 <style>
 #core-view {
-  /* padding-bottom: 100px; */
   position:static;
+  min-height: calc(100vh - 120px);
 }
 </style>
