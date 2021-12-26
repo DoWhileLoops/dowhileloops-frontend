@@ -77,9 +77,11 @@ import Amplitude from 'amplitudejs'
 
 var titleAggregation = 'The Aggregation';
 var titleDelineation = 'The Delineation';
+var titleIteration = 'The Iteration';
 var urlRoot = 'https://dowhileloopsstorage.blob.core.windows.net/dowhilemusic/';
 var coverartAggregation = urlRoot + 'AggregationV3.jpg';
 var coverartDelineation = urlRoot + 'TheDelineation2.png';
+var coverartIteration = urlRoot + 'TheIteration.png';
 var doWhileLoops = 'DoWhileLoops';
 var songs = [
         {
@@ -205,7 +207,82 @@ var songs = [
           "url": urlRoot + "LandHo.mp3",		  
           "cover_art_url": coverartDelineation,
           "uid":14
+        },
+        {
+          "name": "Bidwell...Can You Hear Me?",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "Things_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":15,
+          "isFirstTrack": true
+        },
+        {
+          "name": "The Penultimate Insult",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "ThePenultimate_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":16
+        },
+        {
+          "name": "Falsely Accused Of Intent",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "Intention_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":17
+        },
+        {
+          "name": "The Best Part Of Waking Up (For Marley)",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "GuitarPiece_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":18
+        },
+        {
+          "name": "Implement",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "Implement_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":19
+        },
+        {
+          "name": "Bullish",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "PrimeTime_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":20
+        },
+        {
+          "name": "Garden Shed",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "GardenShed_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":21
+        },
+        {
+          "name": "Big Wall's Coming Down",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "BigWall_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":22
+        },
+        {
+          "name": "Three Sets Of Five Across",
+          "artist": doWhileLoops,
+          "album": titleIteration,
+          "url": urlRoot + "FlipYou_MasterExport.wav",
+          "cover_art_url": coverartIteration,
+          "uid":23
         }
+        
+        
       ];
 
 export default {
